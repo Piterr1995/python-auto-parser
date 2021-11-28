@@ -1,15 +1,10 @@
 import styled, { keyframes } from "styled-components";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Translations } from "enums";
 import { useTranslation } from "next-i18next";
 import Button from "components/atoms/Button";
 import parse from "html-react-parser";
-// const macbookIphone = require("/phones.png");
-// import PhonesImage from "assets/phones.png";
-const PhonesImage = "/phones.png";
-import Hero from "bones/Home/Hero";
-import Pros from "bones/Home/Pros";
-import Spacer from "components/atoms/Spacer";
+
+const PhonesImage = "/images/phones.png";
 
 const GradientAnimation = keyframes`
   0% {
@@ -55,11 +50,10 @@ const HeroSection = styled.div`
   }
   .hero-data {
     /* position: absolute; */
-    margin-top: calc(var(--gradientContainerHeight) - 135px);
+    padding-top: calc(var(--gradientContainerHeight) - 135px);
     display: grid;
     grid-gap: 30px;
-    /* left: 0; */
-    /* right: auto; */
+
     h1 {
       line-height: 6rem;
     }
@@ -80,35 +74,54 @@ const HeroSection = styled.div`
     .image-container {
       position: relative;
       text-align: center;
+      transition: 1s ease;
+      /* transform: translateY(20%); */
       height: 400px;
+      animation: image-animation 1s ease forwards;
       img {
         width: 100%;
         /* height: 100% !important; */
         margin: auto;
       }
     }
+
+    @keyframes image-animation {
+      0% {
+        transform: translateY(20%);
+      }
+      100% {
+        transform: translateY(0%);
+      }
+    }
   }
 `;
 
-const ProsAndConsSection = styled.div``;
-
-const Home = () => {
-  // const { t } = useTranslation(Translations.MAIN);
+const Hero = () => {
+  const { t } = useTranslation(Translations.MAIN);
   return (
     <>
-      <Hero />
-      <Spacer y={8} />
-      <Pros />
+      <HeroSection>
+        <div className="gradient-container">
+          <canvas />
+        </div>
+        <div className="container">
+          <div className="hero-data">
+            <h1 className="no-space big-header">
+              {t("home_hero_section_title")}
+            </h1>
+            <p className="no-space">{parse(t("home_hero_section_subtitle"))}</p>
+            <Button tertiary small>
+              Kontakt
+            </Button>
+            <div className="image-container">
+              <img src={PhonesImage} alt="1" />
+            </div>
+          </div>
+          {/* <h1 className="hero-header">Hello</h1> */}
+        </div>
+      </HeroSection>
     </>
   );
 };
 
-export default Home;
-
-export async function getStaticProps({ locale }: { locale: any }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, [Translations.MAIN])),
-    },
-  };
-}
+export default Hero;

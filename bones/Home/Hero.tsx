@@ -106,9 +106,7 @@ const Hero = () => {
         </div>
         <div className="container">
           <div className="hero-data">
-            <h1 className="no-space big-header">
-              {t("home_hero_section_title")}
-            </h1>
+            <h1 className="no-space xxl">{t("home_hero_section_title")}</h1>
             <p className="no-space">{parse(t("home_hero_section_subtitle"))}</p>
             <Button tertiary small>
               Kontakt

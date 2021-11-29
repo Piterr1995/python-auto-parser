@@ -34,6 +34,10 @@ const firstProsAnimation = keyframes`
       }
  `;
 
+const StyledH1 = styled.h1`
+  font-size: ${({ theme }) => theme.fontSize.xl};
+`;
+
 const ProsContainer = styled.div`
   background-color: var(--lightgray100);
   position: relative;
@@ -47,9 +51,8 @@ const ProsContainer = styled.div`
     }
   }
   .pros-items-container {
-    display: flex;
-    flex-direction: column;
-
+    display: grid;
+    grid-gap: 2.5rem;
     .pros {
       display: grid;
       grid-gap: 0.5rem;
@@ -89,7 +92,7 @@ const Pros = () => {
       </div>
       <div className="container">
         <Spacer y={2} />
-        <h1>{t("home_pros_header")}</h1>
+        <StyledH1>{t("home_pros_header")}</StyledH1>
         <div className="pros-items-container">
           <div className="pros">
             {/* <div>
@@ -139,6 +142,3 @@ const Pros = () => {
 };
 
 export default Pros;
-
-import React from "react";
-import { isAnimatedString } from "@react-spring/shared";

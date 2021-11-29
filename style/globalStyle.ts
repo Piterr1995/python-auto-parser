@@ -35,9 +35,13 @@ export const GlobalStyle = createGlobalStyle`
       padding: 0;
     };
 
-    .big-header {
+    .xxl {
       font-weight: 500;
         font-size: ${theme.fontSize.xxl};
+    }
+
+    .xl {
+      font-size: ${theme.fontSize.xl};
     }
     h1 {
         font-weight: 700;
@@ -130,7 +134,10 @@ export const GlobalStyle = createGlobalStyle`
       }
     };
 
+    .shadow {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+    }
     .modal-additional-action {
       font-size: 1.45rem;
       margin-top: 1.5px;

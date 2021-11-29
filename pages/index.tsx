@@ -9,7 +9,10 @@ import parse from "html-react-parser";
 const PhonesImage = "/phones.png";
 import Hero from "bones/Home/Hero";
 import Pros from "bones/Home/Pros";
+import Quote from "bones/Home/Quote";
 import Spacer from "components/atoms/Spacer";
+import Examples from "bones/Home/Examples";
+import Demo from "bones/Home/Demo";
 
 const GradientAnimation = keyframes`
   0% {
@@ -93,12 +96,20 @@ const HeroSection = styled.div`
 const ProsAndConsSection = styled.div``;
 
 const Home = () => {
-  // const { t } = useTranslation(Translations.MAIN);
+  const { t } = useTranslation(Translations.MAIN);
   return (
     <>
       <Hero />
       <Spacer y={8} />
       <Pros />
+      <Quote
+        text={t("home_first_quote_text")}
+        author={t("home_first_quote_author")}
+      />
+      <Examples />
+      <Spacer y={8} />
+
+      <Demo />
     </>
   );
 };

@@ -5,8 +5,11 @@ import { theme } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
+        --purple100: hsl(276, 84%, 66%);
         --green100: hsl(171, 100%, 39%);
+        --green200: hsl(145, 67%, 37%);
         --blue100: hsl(195, 67%, 50%);
+        --cyan100: hsl(166, 72%, 49%);
         --black100: hsl(180, 14%, 22%);
         --black200: hsl(0, 0%, 19%);
         --black300: hsl(0, 0%, 20%);

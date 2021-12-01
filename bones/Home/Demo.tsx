@@ -8,6 +8,7 @@ import { BsMoonStars, BsSun } from "react-icons/bs";
 import { useToggle } from "hooks/useToggle";
 import { Translations } from "enums";
 import Wave from "components/atoms/Wave";
+import Spacer from "components/atoms/Spacer";
 
 const IphoneImage = "/images/iPhone.jpg";
 
@@ -15,6 +16,12 @@ const Container = styled.div`
   padding: 2rem auto 0;
   text-align: center;
   width: 100%;
+
+  .description,
+  .title,
+  svg {
+    color: white;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -130,17 +137,19 @@ const Demo = () => {
   return (
     <Container className="gradient">
       <Wave reverse />
-      <h2>{t("home_demo_presentation_title")}</h2>
+      <h2 className="title">{t("home_demo_presentation_title")}</h2>
       <ImageWrapper>
         <Img src={IphoneImage} />
         <PhoneImageContent
           fontSize={presentationFontSize}
           isDarkTheme={isDarkTheme}
         >
-          <p>
+          <p className="demo-content-title">
             <b>{t("home_demo_presentation_pill_title")}</b>
           </p>
-          <p>{t("home_demo_presentation_pill_content")}</p>
+          <p className="demo-content">
+            {t("home_demo_presentation_pill_content")}
+          </p>
         </PhoneImageContent>
         <AnimatedIcon
           component={BiFontSize}
@@ -157,7 +166,10 @@ const Demo = () => {
           onClick={toggleIsDarkTheme}
         />
       </ImageWrapper>
-      <p>{t("home_demo_presentation_description")}</p>
+      <p className="description">
+        <b>{t("home_demo_presentation_description")}</b>
+      </p>
+      <Spacer y={8} />
     </Container>
   );
 };

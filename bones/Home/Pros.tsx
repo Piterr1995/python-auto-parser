@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { useTranslation } from "next-i18next";
 import { HiOutlineDocumentSearch } from "react-icons/hi";
+import { BiTimer, BiBrain } from "react-icons/bi";
 import { animated, useSpring } from "react-spring";
 import { Translations } from "enums";
 import Wave from "components/atoms/Wave";
@@ -14,25 +15,54 @@ const blobs = [
   "M70.2 -55C94.6 -25.5 120.4 4 117.1 29.9C113.7 55.9 81.1 78.4 47.1 93C13 107.5 -22.6 114.1 -49 101.5C-75.5 88.9 -92.8 57 -92.9 29.1C-93 1.2 -75.8 -22.8 -57.5 -51C-39.1 -79.2 -19.5 -111.6 1.7 -112.9C22.9 -114.3 45.9 -84.6 70.2 -55",
   "M57.2 -55.1C71.7 -27.5 79.2 -3.8 74.6 17.3C70 38.4 53.2 57.1 30.3 71.3C7.4 85.6 -21.7 95.5 -52.1 88.5C-82.6 81.4 -114.4 57.4 -115.7 32C-117 6.7 -87.8 -20.1 -63.5 -49.9C-39.1 -79.8 -19.5 -112.9 0.9 -113.6C21.4 -114.4 42.7 -82.8 57.2 -55.1",
 ];
-const firstProsAnimation = keyframes`
-      0% {
-        color: var(--green100);
-        filter: brightness(85%);
-        transform: scale(1, 1);
 
-      }
-      50% {
-        color: var(--green100);
-        filter: brightness(75%);
-        transform: scale(1, 1);
-      }
-      100% {
-        color: var(--blue100);
-        transform: scale(1.2, 1.2);
-        filter: brightness(100%);
+const prosIconAnimation = keyframes`
+     5% {
+      color: var(--purple100)
+      transform: translateX(10%)
+     }  
 
-      }
+     10% {
+       color: var(--blue100);
+      transform: translateX(20%)
+
+     }
+
+     15% {
+       color: var(--cyan100);
+     }
+
+     20% {
+      color: var(--green100);
+      transform: translateX(0%)
+
+     }
+
+     85% {
+       color: var(--cyan100);
+     }
+
+     90% {
+      color: var(--blue100);
+      transform: translateX(20%)
+
+     
+     }
+     100% {
+      color: var(--green100);
+
+     }
  `;
+
+const IconWrapper = styled.div<{ order: number }>`
+  svg {
+    animation-name: ${prosIconAnimation};
+    animation-duration: 10s;
+    animation-delay: ${({ order }) => order * 3}s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+`;
 
 const StyledH1 = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.xl};
@@ -95,23 +125,23 @@ const Pros = () => {
         <StyledH1>{t("home_pros_header")}</StyledH1>
         <div className="pros-items-container">
           <div className="pros">
-            {/* <div>
+            <IconWrapper order={1}>
               <HiOutlineDocumentSearch size={34} className="first-pros" />
-            </div> */}
+            </IconWrapper>
             <h2 className="no-space">{t("home_first_pros_title")}</h2>
             <p className="no-space">{t("home_first_pros_description")}</p>
           </div>
           <div className="pros">
-            {/* <div>
-              <HiOutlineDocumentSearch size={34} className="first-pros" />
-            </div> */}
+            <IconWrapper order={2}>
+              <BiTimer size={34} className="first-pros" />
+            </IconWrapper>
             <h2 className="no-space">{t("home_second_pros_title")}</h2>
             <p className="no-space">{t("home_second_pros_description")}</p>
           </div>
           <div className="pros">
-            {/* <div>
-              <HiOutlineDocumentSearch size={34} className="first-pros" />
-            </div> */}
+            <IconWrapper order={3}>
+              <BiBrain size={30} className="first-pros" />
+            </IconWrapper>
             <h2 className="no-space">{t("home_third_pros_title")}</h2>
             <p className="no-space">{t("home_third_pros_description")}</p>
           </div>
@@ -132,10 +162,6 @@ const Pros = () => {
           />
         </svg>
       </div>
-
-      <button onClick={() => setBlobAnimationActiveIndex((prev) => prev + 1)}>
-        Up
-      </button>
       <Spacer y={10} />
     </ProsContainer>
   );

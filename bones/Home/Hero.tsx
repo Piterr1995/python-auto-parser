@@ -35,11 +35,11 @@ const HeroSection = styled.div`
       height: 100%;
       background: linear-gradient(
         -60deg,
-        #b760f1,
-        #b760f1 23%,
-        #23a6d5 50%,
-        #23d5ab 80%,
-        #1f9c53
+        var(--purple100),
+        var(--purple100) 23%,
+        var(--blue100) 50%,
+        var(--cyan100) 80%,
+        var(--green200)
       );
       background-size: 300% 300%;
       transform-origin: 0 100%;

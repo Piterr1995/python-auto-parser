@@ -107,9 +107,13 @@ const Home = () => {
         author={t("home_first_quote_author")}
       />
       <Examples />
-      <Spacer y={8} />
+      <Spacer y={12} />
 
       <Demo />
+      <Quote
+        text={t("home_second_quote_text")}
+        author={t("home_second_quote_author")}
+      />
     </>
   );
 };

@@ -1,44 +1,15 @@
-import styled, { css } from "styled-components";
-import { useRouter } from "next/router";
-import Button from "components/atoms/Button";
+import MobileTopNavbar from "./bones/MobileTopNavbar";
+import { useAppContext } from "hooks/useAppContext";
+import { Breakpoints } from "enums";
 
-const MobileTopNavbarWrapper = styled.nav`
-  z-index: 999;
-  height: 50px;
-  padding: 20px 15px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #ececec;
-  position: sticky;
-  top: 0;
-`;
+const Navbar = () => {
+  const { state } = useAppContext();
 
-const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  width: 4.5rem;
-  cursor: pointer;
-  img {
-    aspect-ratio: 4 / 3;
-    width: 100%;
+  if (state.windowWidth < Breakpoints.BIG_TABLET) {
+    return <MobileTopNavbar />;
+  } else {
+    return <></>;
   }
-`;
-
-const StyledButton = styled(Button)`
-  margin-left: auto;
-`;
-const MobileTopNavbar = () => {
-  const router = useRouter();
-  const handleLogoClick = () => {
-    router.push("/");
-  };
-  return (
-    <MobileTopNavbarWrapper>
-      <Logo onClick={handleLogoClick}>Bookpill</Logo>
-
-      <StyledButton>Wypróbuj za darmo</StyledButton>
-    </MobileTopNavbarWrapper>
-  );
 };
 
-export default MobileTopNavbar;
+export default Navbar;

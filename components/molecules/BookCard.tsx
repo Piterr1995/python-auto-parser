@@ -1,17 +1,6 @@
 import styled from "styled-components";
 import { AiOutlineClockCircle } from "react-icons/ai";
 
-const A = styled.a`
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  width: 100%;
-
-  :hover {
-    color: red !important;
-  }
-`;
-
 const Card = styled.div`
   border-radius: 1.5rem;
   padding: 1rem;
@@ -21,12 +10,12 @@ const Card = styled.div`
   }
 
   h1.title {
-    margin: 10px 0 5px;
+    margin: 1rem 0 0.5rem;
   }
 
   h2.authors {
-    margin: 5px 0 10px;
-    color: #676767;
+    margin: 0.5rem 0 1rem;
+    color: var(--grey100);
   }
   .time-wrapper {
     display: flex;
@@ -36,9 +25,20 @@ const Card = styled.div`
       color: inherit;
     }
     span {
-      margin-left: 5px;
+      margin-left: 0.5px;
       font-size: 1.4rem;
     }
+  }
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+  :hover {
+    transform: scale(1.05, 1.05);
   }
 `;
 

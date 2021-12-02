@@ -24,7 +24,7 @@ const BookCardsContainerWrapper = styled.div`
 const Examples = () => {
   const { t } = useTranslation(Translations.MAIN);
   return (
-    <div className="container">
+    <div className="container" id="examples">
       <h1 className="xl">{t("home_examples_title")}</h1>
       <BookCardsContainerWrapper>
         <BookCardsContainer>

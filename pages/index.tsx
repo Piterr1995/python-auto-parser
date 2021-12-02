@@ -1,18 +1,18 @@
 import styled, { keyframes } from "styled-components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Translations } from "enums";
 import { useTranslation } from "next-i18next";
+
+import { useAppContext } from "hooks/useAppContext";
+import { Translations } from "enums";
 import Button from "components/atoms/Button";
-import parse from "html-react-parser";
-// const macbookIphone = require("/phones.png");
-// import PhonesImage from "assets/phones.png";
-const PhonesImage = "/phones.png";
 import Hero from "bones/Home/Hero";
 import Pros from "bones/Home/Pros";
 import Quote from "bones/Home/Quote";
 import Spacer from "components/atoms/Spacer";
 import Examples from "bones/Home/Examples";
 import Demo from "bones/Home/Demo";
+import Footer from "components/organisms/Footer";
+const PhonesImage = "/phones.png";
 
 const GradientAnimation = keyframes`
   0% {
@@ -96,6 +96,7 @@ const HeroSection = styled.div`
 const ProsAndConsSection = styled.div``;
 
 const Home = () => {
+  const { state } = useAppContext();
   const { t } = useTranslation(Translations.MAIN);
   return (
     <>
@@ -114,6 +115,7 @@ const Home = () => {
         text={t("home_second_quote_text")}
         author={t("home_second_quote_author")}
       />
+      <Footer />
     </>
   );
 };

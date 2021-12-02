@@ -17,6 +17,10 @@ const blobs = [
 ];
 
 const prosIconAnimation = keyframes`
+    0% {
+      color: var(--purple100)
+      transform: translateX(0%)
+    } 
      5% {
       color: var(--purple100)
       transform: translateX(10%)
@@ -30,11 +34,13 @@ const prosIconAnimation = keyframes`
 
      15% {
        color: var(--cyan100);
+      transform: translateX(10%)
+
      }
 
      20% {
       color: var(--green100);
-      transform: translateX(0%)
+      transform: translateX(00%)
 
      }
 
@@ -44,7 +50,6 @@ const prosIconAnimation = keyframes`
 
      90% {
       color: var(--blue100);
-      transform: translateX(20%)
 
      
      }

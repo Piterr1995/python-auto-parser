@@ -16,6 +16,26 @@ const GradientAnimation = keyframes`
 
 `;
 
+const Navbar = styled.nav`
+  z-index: 3;
+  color: white;
+  font-size: 2rem;
+  padding: var(--normalPadding);
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    font-weight: 600;
+    color: white;
+    border: 2px solid white;
+  }
+`;
 const HeroSection = styled.div`
   --gradientContainerHeight: calc(35vh + 10vw);
 
@@ -66,7 +86,7 @@ const HeroSection = styled.div`
       font-weight: 600;
     }
     button {
-      width: 50%;
+      width: 75%;
       border: 3px solid var(--black300);
       font-size: 1.6rem;
       font-weight: 700;
@@ -98,9 +118,21 @@ const HeroSection = styled.div`
 
 const Hero = () => {
   const { t } = useTranslation(Translations.MAIN);
+  const handleScrollToPillExamples = () => {
+    const examples = document.getElementById("examples");
+    examples?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <HeroSection>
+        <Navbar>
+          <span>BookPill</span>
+          <Button tertiary onClick={handleScrollToPillExamples}>
+            Wypróbuj za darmo
+          </Button>
+        </Navbar>
         <div className="gradient-container">
           <canvas />
         </div>
@@ -108,8 +140,8 @@ const Hero = () => {
           <div className="hero-data">
             <h1 className="no-space xxl">{t("home_hero_section_title")}</h1>
             <p className="no-space">{parse(t("home_hero_section_subtitle"))}</p>
-            <Button tertiary small>
-              Kontakt
+            <Button tertiary small onClick={handleScrollToPillExamples}>
+              Wypróbuj za darmo
             </Button>
             <div className="image-container">
               <img src={PhonesImage} alt="1" />

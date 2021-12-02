@@ -6,6 +6,7 @@ import { theme } from "./theme";
 export const GlobalStyle = createGlobalStyle`
     :root {
         --purple100: hsl(276, 84%, 66%);
+        --grey100: 	hsl(0, 0%, 40%);
         --green100: hsl(171, 100%, 39%);
         --green200: hsl(145, 67%, 37%);
         --blue100: hsl(195, 67%, 50%);
@@ -16,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
         --bootstrapDark: hsl(210, 10%, 23%);
         --red100: hsl(0, 70%, 64%);
         --lightgray100: hsl(0, 0%, 96%);
-        --normalPadding: 16px;
+        --normalPadding: 2rem;
     }
     * {
       box-sizing: border-box;

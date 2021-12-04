@@ -4,17 +4,18 @@ import { useTranslation } from "react-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Button from "components/atoms/Button";
-import BookInfoSwitch from "bones/PillDetails/BookInfoSwitch";
+import PillInfoSwitch from "bones/PillDetails/PillInfoSwitch";
 import { Translations, Breakpoints } from "enums";
 import { useAppContext } from "hooks/useAppContext";
+import { pills, authors } from "data";
+import Spacer from "components/atoms/Spacer";
 
+const StyledButton = styled(Button)`
+  text-decoration: none;
+`;
 const Card = styled.div`
-  padding: 15px;
-  border-radius: 15px;
-
-  h2 {
-    color: var(--grey100);
-  }
+  padding: 1.5rem;
+  border-radius: 1.5rem;
 `;
 const ImageWrapper = styled.div`
   img {
@@ -23,6 +24,10 @@ const ImageWrapper = styled.div`
 `;
 
 const CardData = styled.div`
+  .authors {
+    color: var(--grey100);
+  }
+
   padding: 1rem 0;
 
   h1 {
@@ -31,15 +36,20 @@ const CardData = styled.div`
   h2 {
     margin: 0.5rem 0 1rem;
   }
-  p {
-    margin: 0.5rem 0;
 
-    &.informations {
-      margin-top: 1.5rem;
+  .additionalInfo {
+    .informations {
+      margin: 1.5rem 0 0.5rem;
       font-weight: 500;
     }
+    .fullTitle,
+    .categories {
+      margin: 0.5rem 0;
+      font-size: 1.5rem;
+    }
   }
-  .timeWrapper {
+
+  .timeSectionContainer {
     display: flex;
     align-items: center;
 
@@ -53,39 +63,54 @@ const CardData = styled.div`
   }
 `;
 
-const ButtonsWrapper = styled.div`
+const ButtonsContainer = styled.div`
   margin-top: 15px;
 `;
 
-const PillDetails = () => {
+const PillDetails = ({ pill, authorsInfo }: any) => {
   const { state } = useAppContext();
   const { t } = useTranslation(Translations.MAIN);
+  const { cover, title, authors: pillAuthors, timeToRead, purchaseLink } = pill;
+  const authorNames = pillAuthors.map((author) => author.name);
+  const authors = authorNames.join(", ");
+
   return (
     <>
       {state.windowWidth < Breakpoints.BIG_TABLET ? (
         <Card>
           <ImageWrapper>
-            <img alt={"123"} />
+            <img alt={"123"} src={cover} />
           </ImageWrapper>
           <CardData>
-            <h1>Prawo</h1>
-            <h2>Will Smith, Nicolas Cage</h2>
-            <div className="timeWrapper">
-              <AiOutlineClockCircle size={20} /> <span>13 minut</span>
+            <h1>{title}</h1>
+            <h2 className="authors">{authors}</h2>
+            <div className="timeSectionContainer">
+              <AiOutlineClockCircle size={20} /> <span>{timeToRead} min.</span>
             </div>
-            <ButtonsWrapper>
-              <Button>Czytaj</Button> <Button secondary>Kup tę książkę</Button>
-            </ButtonsWrapper>
-            <p className="informations">Dodatkowe informacje</p>
-            <p>{t("pill_details_full_title")}: Prawo. Jak być dobrym</p>
-            <p>{t("pill_details_categories")}: filozofia, finanse</p>
+            <ButtonsContainer>
+              <Button>Czytaj</Button>{" "}
+              <StyledButton
+                secondary
+                as="a"
+                href={purchaseLink}
+                target="_blank"
+              >
+                Kup tę książkę
+              </StyledButton>
+            </ButtonsContainer>
+            <div className="additionalInfo">
+              <p className="informations">Dodatkowe informacje</p>
+              <p className="fullTitle">
+                {t("pill_details_full_title")}: {title}
+              </p>
+              <p className="categories">
+                {t("pill_details_categories")}: filozofia, finanse
+              </p>
+            </div>
           </CardData>
-          <BookInfoSwitch
+          <PillInfoSwitch
             bookDescription={"<p>Hello</p>"}
-            authors={[
-              { name: "John Stones", description: "A nice guy" },
-              { name: "John Stones", description: "A nice guy" },
-            ]}
+            authors={authorsInfo}
           />{" "}
         </Card>
       ) : (
@@ -96,9 +121,38 @@ const PillDetails = () => {
 };
 export default PillDetails;
 
-export async function getStaticProps({ locale }: { locale: any }) {
+export async function getStaticPaths() {
+  const paths = pills.map((pill) => ({
+    params: {
+      pillId: `${pill.id}`,
+    },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({
+  locale,
+  params,
+}: {
+  locale: any;
+  params: any;
+}) {
+  const pillId = params.pillId;
+  const pill = pills.find((item) => item.id === +pillId);
+  const pillAuthorIds = pill?.authors.map((author) => author.id);
+  let authorsInfo: any[] = [];
+  pillAuthorIds?.forEach((id) => {
+    const author = authors.find((author) => author.id === id);
+    authorsInfo.push(author);
+  });
+
   return {
     props: {
+      pill,
+      authorsInfo,
       ...(await serverSideTranslations(locale, [Translations.MAIN])),
     },
   };

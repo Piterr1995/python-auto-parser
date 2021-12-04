@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { AiOutlineClockCircle } from "react-icons/ai";
+import Spacer from "components/atoms/Spacer";
 
 const Card = styled.div`
   border-radius: 1.5rem;
@@ -42,20 +43,20 @@ const A = styled.a`
   }
 `;
 
-type BookCardProps = {
+type PillCardProps = {
   cover: string;
   title: string;
   authors: string;
   timeToRead: number;
   destinationUrl: string;
 };
-const BookCard = ({
+const PillCard = ({
   cover,
   title,
   authors,
   timeToRead,
   destinationUrl,
-}: BookCardProps) => {
+}: PillCardProps) => {
   return (
     <A href={destinationUrl}>
       <Card className="shadow">
@@ -64,7 +65,8 @@ const BookCard = ({
           <h1 className="title">{title}</h1>
           <h2 className="authors">{authors}</h2>
           <div className="time-wrapper">
-            <AiOutlineClockCircle size={20} /> <span>{timeToRead} min.</span>
+            <AiOutlineClockCircle size={20} />
+            <Spacer x={3} /> <span>{timeToRead} min.</span>
           </div>
         </div>
       </Card>
@@ -72,4 +74,4 @@ const BookCard = ({
   );
 };
 
-export default BookCard;
+export default PillCard;

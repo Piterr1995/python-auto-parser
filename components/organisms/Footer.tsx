@@ -3,6 +3,10 @@ import styled from "styled-components";
 const FacebookLink = styled.a`
   text-decoration: none;
   color: #3b5998;
+
+  :hover {
+    text-decoration: underline;
+  }
 `;
 const Footer = () => {
   return (

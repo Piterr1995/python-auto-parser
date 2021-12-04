@@ -92,6 +92,10 @@ const ProsContainer = styled.div`
       display: grid;
       grid-gap: 0.5rem;
       justify-content: space-around;
+
+      p {
+        font-size: 1.3rem;
+      }
     }
   }
 

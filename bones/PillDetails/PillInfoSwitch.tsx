@@ -6,36 +6,31 @@ import styled from "styled-components";
 import Switch from "components/molecules/Switch";
 import parse from "html-react-parser";
 
-const InfoSwitch = styled.div`
-  span {
-    font-weight: 500;
-    margin-right: 10px;
-    padding-bottom: 10px;
-    cursor: pointer;
-
-    &.active {
-      font-weight: 600;
-      border-bottom: 1px solid var(--green100);
-    }
-  }
-`;
-
 const Content = styled.div`
   * {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 `;
 
+const AuthorsInfoWrapper = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  .author {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--grey200);
+    margin: 0.5rem 0;
+  }
+`;
 const AuthorsInfo = ({ authors }: any) => (
-  <>
+  <AuthorsInfoWrapper>
     {authors.map((author: any) => (
-      <>
-        <p>{author.name.toUpperCase()}</p>{" "}
+      <div key={author}>
+        <p className="author">{author.name.toUpperCase()}</p>{" "}
         <div>{parse(author.description)}</div>
-        <br />
-      </>
+      </div>
     ))}
-  </>
+  </AuthorsInfoWrapper>
 );
 
 enum TabTypes {
@@ -59,11 +54,11 @@ const BookInfoSwitch = ({ bookDescription, authors }: BookInfoSwitchProps) => {
 
   const switchItems = [
     {
-      name: t("book_details_book_description"),
+      name: t("pill_details_book_description"),
       value: TabTypes.BOOK_DESCRIPTION,
     },
     {
-      name: t("book_details_about_authors"),
+      name: t("pill_details_about_authors"),
       value: TabTypes.ABOUT_AUTHORS,
     },
   ];

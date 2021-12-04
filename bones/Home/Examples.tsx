@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 
 import { Translations } from "enums";
-import { books } from "data";
-import BookCard from "components/molecules/BookCard";
+import { pills } from "data";
+import PillCard from "components/molecules/PillCard";
 
-const BookCardsContainer = styled.div`
+const PillCardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.5rem;
@@ -17,7 +17,7 @@ const BookCardsContainer = styled.div`
   scrollbar-width: none;
 `;
 
-const BookCardsContainerWrapper = styled.div`
+const PillCardsContainerWrapper = styled.div`
   width: 100%;
   overflow: hidden;
 `;
@@ -26,20 +26,20 @@ const Examples = () => {
   return (
     <div className="container" id="examples">
       <h1 className="xl">{t("home_examples_title")}</h1>
-      <BookCardsContainerWrapper>
-        <BookCardsContainer>
-          {books.map((book) => (
-            <BookCard
-              key={book.id}
-              cover={book.cover}
-              title={book.title}
-              authors={book.authors.join(", ")}
-              timeToRead={book.timeToRead}
+      <PillCardsContainerWrapper>
+        <PillCardsContainer>
+          {pills.map((pill) => (
+            <PillCard
+              key={pill.id}
+              cover={pill.cover}
+              title={pill.title}
+              authors={pill.authors.join(", ")}
+              timeToRead={pill.timeToRead}
               destinationUrl="/"
             />
           ))}
-        </BookCardsContainer>
-      </BookCardsContainerWrapper>
+        </PillCardsContainer>
+      </PillCardsContainerWrapper>
     </div>
   );
 };

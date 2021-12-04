@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 
     }
     body {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       letter-spacing: 0.5px;
       color: var(--black300);
       margin: 0;

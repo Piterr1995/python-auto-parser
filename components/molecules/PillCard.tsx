@@ -2,32 +2,39 @@ import styled from "styled-components";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import Spacer from "components/atoms/Spacer";
 
+const CardBackground = "/images/dynamic-style.png";
+
 const Card = styled.div`
   border-radius: 1.5rem;
-  padding: 1rem;
-
+  background: url(${CardBackground});
+  border: 4px solid #cacaca;
   img {
+    width: 100%;
     aspect-ratio: 1 / 1;
   }
 
-  h1.title {
-    margin: 1rem 0 0.5rem;
-  }
+  .data {
+    padding: 1rem;
 
-  h2.authors {
-    margin: 0.5rem 0 1rem;
-    color: var(--grey100);
-  }
-  .time-wrapper {
-    display: flex;
-    align-items: center;
-
-    svg {
-      color: inherit;
+    h1.title {
+      margin: 1rem 0 0.5rem;
     }
-    span {
-      margin-left: 0.5px;
-      font-size: 1.4rem;
+
+    h2.authors {
+      margin: 0.5rem 0 1rem;
+      color: var(--grey100);
+    }
+    .time-wrapper {
+      display: flex;
+      align-items: center;
+
+      svg {
+        color: inherit;
+      }
+      span {
+        margin-left: 0.5px;
+        font-size: 1.4rem;
+      }
     }
   }
 `;

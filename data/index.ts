@@ -1,6 +1,8 @@
 export {};
 
-const ThinkAndGetRich = "/images/book-covers/ThinkAndGetRich.jpg";
+const ThinkAndGetRichCover = "/images/book-covers/ThinkAndGetRich.svg";
+const MeditationsCover = "/images/book-covers/Meditations.svg";
+const ProphetCover = "/images/book-covers/Prophet.svg";
 
 export const authors = [
   {
@@ -29,7 +31,7 @@ export const authors = [
   {
     id: 5,
     name: "Phineas Taylor Barnum",
-    description: `Amerykański pisarz, wydawca oraz filantrop. Przede wszystkim zasłynął z bycia przedsiębiorcą cyrkowym oraz politykiem. Był założycielem cyrku Barnum & Bailey. Uważany za jednego z prekursorów nowoczesnego przemysłu rozrywkowego i reklamy. W 2017 roku, na podstawie jego biografii, powstał film pt. Król rozrywki (ang. The Greatest Showman)`,
+    description: `Amerykański pisarz, wydawca oraz filantrop. Zasłynął przede wszystkim  z bycia przedsiębiorcą cyrkowym oraz politykiem. Był założycielem cyrku Barnum & Bailey. Uważany za jednego z prekursorów nowoczesnego przemysłu rozrywkowego i reklamy. W 2017 roku, na podstawie jego biografii, powstał film pt. Król rozrywki (ang. The Greatest Showman)`,
   },
   {
     id: 6,
@@ -43,17 +45,16 @@ export const authors = [
   },
   {
     id: 8,
-    name: "Walace D. Wattles",
-    description: `Amerykański pisarz. Autor bestsellera “Sztuka wzbogacania się”, w którym podejmuję nowoczesną (jak na czasy, w których żył) tematykę gromadzenia pieniędzy.  Książka ta skupia się głównie wokół pojęć szczęścia i bogactwa oraz sposobów ich osiągnięcia.
-      Ciekawoska: Rhonda Byrne, autorka wydanego w 2006 bestsellera The Secret w wywiadzie dla Newsweeka  przyznała, że inspirację do napisania książki czerpała właśnie z książki The Science of Getting Rich.`,
+    name: "Benjamin Franklin",
+    description: `Jeden z Ojców Założycieli Stanów Zjednoczonych, projektant i sygnatariusz Deklaracji Niepodległości Stanów Zjednoczonych, pisarz, wynalazca, dyplomata, mąż stanu, drukarz, wydawca i filozof. Był istotną postacią w historii fizyki i amerykańskiego oświecenia. Jako wynalazca jest znany z piorunochronu.`,
   },
 ];
 export const pills = [
   {
     id: 1,
-    cover: ThinkAndGetRich,
+    cover: ThinkAndGetRichCover,
     title: "Myśl i bogać się",
-    authors: [{ id: 1, name: "Napoleon Hill" }],
+    authors: ["Napoleon Hill"],
     timeToRead: 10,
     purchaseLink:
       "https://onepress.pl/ksiazki/mysl-i-bogac-sie-wersja-oryginalna-odswiezona-i-zaktualizowana-napoleon-hill-ross-cornwell-editor,mysbog.htm#format/d",
@@ -66,11 +67,12 @@ export const pills = [
   },
   {
     id: 2,
-    cover: ThinkAndGetRich,
-    title: "Myśl i bogać się",
-    authors: [{ id: 1, name: "Napoleon Hill" }],
+    cover: ProphetCover,
+    title: "Prorok",
+    authors: ["Khalil Gibran"],
 
     timeToRead: 10,
+    purchaseLink: "https://wydsal.pl/literatura/236-prorok.html",
     chapters: [
       {
         title: "The art of thinking",
@@ -80,11 +82,86 @@ export const pills = [
   },
   {
     id: 3,
-    cover: ThinkAndGetRich,
-    title: "Myśl i bogać się",
-    authors: [{ id: 1, name: "Napoleon Hill" }],
-
+    cover: MeditationsCover,
+    title: "Sztuka wzbogacania się",
+    authors: ["Walace D. Wattles"],
     timeToRead: 10,
+    purchaseLink:
+      "https://www.zlotemysli.pl/prod/6370/sztuka-wzbogacania-sie-wallace-d-wattles.html",
+    chapters: [
+      {
+        title: "The art of thinking",
+        text: "<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna erat, ornare quis dui non, sollicitudin interdum dolor. Vivamus purus metus, luctus in placerat et, eleifend eu mi. Fusce in enim luctus, volutpat justo tempus, blandit metus. Proin sed mauris vel nibh blandit luctus sed vel dolor. Cras interdum tortor quis convallis semper. Aenean nec molestie mauris, sit amet bibendum urna. Vestibulum sollicitudin ac turpis fermentum vulputate. Nulla lacinia purus vitae justo placerat ultrices. Phasellus tempus risus erat, eget feugiat dolor placerat a. Etiam convallis mauris eu magna volutpat tempus.</b>",
+      },
+    ],
+  },
+  {
+    id: 4,
+    cover: MeditationsCover,
+    title: "Najbogatszy człowiek w Babilonie",
+    authors: ["George Samuel Clason"],
+    timeToRead: 10,
+    purchaseLink:
+      "https://studioemka.com.pl/ekonomia-biznes/435-najbogatszy-czlowiek-w-babilonie.html",
+    chapters: [
+      {
+        title: "The art of thinking",
+        text: "<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna erat, ornare quis dui non, sollicitudin interdum dolor. Vivamus purus metus, luctus in placerat et, eleifend eu mi. Fusce in enim luctus, volutpat justo tempus, blandit metus. Proin sed mauris vel nibh blandit luctus sed vel dolor. Cras interdum tortor quis convallis semper. Aenean nec molestie mauris, sit amet bibendum urna. Vestibulum sollicitudin ac turpis fermentum vulputate. Nulla lacinia purus vitae justo placerat ultrices. Phasellus tempus risus erat, eget feugiat dolor placerat a. Etiam convallis mauris eu magna volutpat tempus.</b>",
+      },
+    ],
+  },
+  {
+    id: 5,
+    cover: MeditationsCover,
+    title: "Benjamin Franklin Autobiografia",
+    authors: ["Benjamin Franklin"],
+    timeToRead: 10,
+    purchaseLink:
+      "https://www.empik.com/benjamin-franklin-autobiografia-franklin-benjamin,p1270680680,ebooki-i-mp3-p?gclsrc=ds&gclsrc=ds",
+    chapters: [
+      {
+        title: "The art of thinking",
+        text: "<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna erat, ornare quis dui non, sollicitudin interdum dolor. Vivamus purus metus, luctus in placerat et, eleifend eu mi. Fusce in enim luctus, volutpat justo tempus, blandit metus. Proin sed mauris vel nibh blandit luctus sed vel dolor. Cras interdum tortor quis convallis semper. Aenean nec molestie mauris, sit amet bibendum urna. Vestibulum sollicitudin ac turpis fermentum vulputate. Nulla lacinia purus vitae justo placerat ultrices. Phasellus tempus risus erat, eget feugiat dolor placerat a. Etiam convallis mauris eu magna volutpat tempus.</b>",
+      },
+    ],
+  },
+  {
+    id: 6,
+    cover: MeditationsCover,
+    title: "Sztuka zdobywania pieniędzy",
+    authors: ["Phineas Taylor Barnum"],
+    timeToRead: 10,
+    purchaseLink:
+      "https://www.zlotemysli.pl/prod/13713/wydanie-ii-sztuka-zdobywania-pieniedzy-p-t-barnum.html",
+    chapters: [
+      {
+        title: "The art of thinking",
+        text: "<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna erat, ornare quis dui non, sollicitudin interdum dolor. Vivamus purus metus, luctus in placerat et, eleifend eu mi. Fusce in enim luctus, volutpat justo tempus, blandit metus. Proin sed mauris vel nibh blandit luctus sed vel dolor. Cras interdum tortor quis convallis semper. Aenean nec molestie mauris, sit amet bibendum urna. Vestibulum sollicitudin ac turpis fermentum vulputate. Nulla lacinia purus vitae justo placerat ultrices. Phasellus tempus risus erat, eget feugiat dolor placerat a. Etiam convallis mauris eu magna volutpat tempus.</b>",
+      },
+    ],
+  },
+  {
+    id: 7,
+    cover: MeditationsCover,
+    title: "Rozmyślania",
+    authors: ["Cesarz rzymski Marek Aureliusz"],
+    timeToRead: 10,
+    purchaseLink:
+      "https://www.taniaksiazka.pl/rozmyslania-marek-aureliusz-p-744408.html?utm_source=google&utm_medium=cpc&utm_campaign=shopping",
+    chapters: [
+      {
+        title: "The art of thinking",
+        text: "<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna erat, ornare quis dui non, sollicitudin interdum dolor. Vivamus purus metus, luctus in placerat et, eleifend eu mi. Fusce in enim luctus, volutpat justo tempus, blandit metus. Proin sed mauris vel nibh blandit luctus sed vel dolor. Cras interdum tortor quis convallis semper. Aenean nec molestie mauris, sit amet bibendum urna. Vestibulum sollicitudin ac turpis fermentum vulputate. Nulla lacinia purus vitae justo placerat ultrices. Phasellus tempus risus erat, eget feugiat dolor placerat a. Etiam convallis mauris eu magna volutpat tempus.</b>",
+      },
+    ],
+  },
+  {
+    id: 8,
+    cover: MeditationsCover,
+    title: "Majestat Spokoju",
+    authors: ["William George Jordan"],
+    timeToRead: 10,
+    purchaseLink: "https://www.enbook.pl/catalog/product/view/id/4944487",
     chapters: [
       {
         title: "The art of thinking",

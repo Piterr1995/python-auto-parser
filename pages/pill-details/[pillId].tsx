@@ -142,10 +142,9 @@ export async function getStaticProps({
 }) {
   const pillId = params.pillId;
   const pill = pills.find((item) => item.id === +pillId);
-  const pillAuthorIds = pill?.authors.map((author) => author.id);
   let authorsInfo: any[] = [];
-  pillAuthorIds?.forEach((id) => {
-    const author = authors.find((author) => author.id === id);
+  pill?.authors?.forEach((authorId) => {
+    const author = authors.find((author) => author.id === authorId);
     authorsInfo.push(author);
   });
 

@@ -67,12 +67,12 @@ const ButtonsContainer = styled.div`
   margin-top: 15px;
 `;
 
-const PillDetails = ({ pill, authorsInfo }: any) => {
+const PillDetails = ({ pill, pillAuthors }: any) => {
   const { state } = useAppContext();
   const { t } = useTranslation(Translations.MAIN);
-  const { cover, title, authors: pillAuthors, timeToRead, purchaseLink } = pill;
-  const authorNames = pillAuthors.map((author) => author.name);
-  const authors = authorNames.join(", ");
+  const { cover, title, timeToRead, purchaseLink } = pill;
+  const authorNames = pillAuthors.map((author: any) => author.name);
+  const authorsString = authorNames.join(", ");
 
   return (
     <>
@@ -83,7 +83,7 @@ const PillDetails = ({ pill, authorsInfo }: any) => {
           </ImageWrapper>
           <CardData>
             <h1>{title}</h1>
-            <h2 className="authors">{authors}</h2>
+            <h2 className="authors">{authorsString}</h2>
             <div className="timeSectionContainer">
               <AiOutlineClockCircle size={20} /> <span>{timeToRead} min.</span>
             </div>
@@ -110,7 +110,7 @@ const PillDetails = ({ pill, authorsInfo }: any) => {
           </CardData>
           <PillInfoSwitch
             bookDescription={"<p>Hello</p>"}
-            authors={authorsInfo}
+            authors={pillAuthors}
           />{" "}
         </Card>
       ) : (
@@ -142,16 +142,17 @@ export async function getStaticProps({
 }) {
   const pillId = params.pillId;
   const pill = pills.find((item) => item.id === +pillId);
-  let authorsInfo: any[] = [];
+  let pillAuthors: any[] = [];
   pill?.authors?.forEach((authorId) => {
     const author = authors.find((author) => author.id === authorId);
-    authorsInfo.push(author);
+    pillAuthors.push(author);
   });
+  console.log(pillAuthors);
 
   return {
     props: {
       pill,
-      authorsInfo,
+      pillAuthors,
       ...(await serverSideTranslations(locale, [Translations.MAIN])),
     },
   };

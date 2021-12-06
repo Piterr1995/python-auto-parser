@@ -54,7 +54,7 @@ export const pills = [
     id: 1,
     cover: ThinkAndGetRichCover,
     title: "Myśl i bogać się",
-    authors: ["Napoleon Hill"],
+    authors: [1],
     timeToRead: 10,
     purchaseLink:
       "https://onepress.pl/ksiazki/mysl-i-bogac-sie-wersja-oryginalna-odswiezona-i-zaktualizowana-napoleon-hill-ross-cornwell-editor,mysbog.htm#format/d",
@@ -69,7 +69,7 @@ export const pills = [
     id: 2,
     cover: ProphetCover,
     title: "Prorok",
-    authors: ["Khalil Gibran"],
+    authors: [2],
 
     timeToRead: 10,
     purchaseLink: "https://wydsal.pl/literatura/236-prorok.html",
@@ -84,7 +84,7 @@ export const pills = [
     id: 3,
     cover: MeditationsCover,
     title: "Sztuka wzbogacania się",
-    authors: ["Walace D. Wattles"],
+    authors: [3],
     timeToRead: 10,
     purchaseLink:
       "https://www.zlotemysli.pl/prod/6370/sztuka-wzbogacania-sie-wallace-d-wattles.html",
@@ -99,7 +99,7 @@ export const pills = [
     id: 4,
     cover: MeditationsCover,
     title: "Najbogatszy człowiek w Babilonie",
-    authors: ["George Samuel Clason"],
+    authors: [4],
     timeToRead: 10,
     purchaseLink:
       "https://studioemka.com.pl/ekonomia-biznes/435-najbogatszy-czlowiek-w-babilonie.html",
@@ -114,7 +114,7 @@ export const pills = [
     id: 5,
     cover: MeditationsCover,
     title: "Benjamin Franklin Autobiografia",
-    authors: ["Benjamin Franklin"],
+    authors: [8],
     timeToRead: 10,
     purchaseLink:
       "https://www.empik.com/benjamin-franklin-autobiografia-franklin-benjamin,p1270680680,ebooki-i-mp3-p?gclsrc=ds&gclsrc=ds",
@@ -129,7 +129,7 @@ export const pills = [
     id: 6,
     cover: MeditationsCover,
     title: "Sztuka zdobywania pieniędzy",
-    authors: ["Phineas Taylor Barnum"],
+    authors: [5],
     timeToRead: 10,
     purchaseLink:
       "https://www.zlotemysli.pl/prod/13713/wydanie-ii-sztuka-zdobywania-pieniedzy-p-t-barnum.html",
@@ -144,7 +144,7 @@ export const pills = [
     id: 7,
     cover: MeditationsCover,
     title: "Rozmyślania",
-    authors: ["Cesarz rzymski Marek Aureliusz"],
+    authors: [6],
     timeToRead: 10,
     purchaseLink:
       "https://www.taniaksiazka.pl/rozmyslania-marek-aureliusz-p-744408.html?utm_source=google&utm_medium=cpc&utm_campaign=shopping",
@@ -159,7 +159,7 @@ export const pills = [
     id: 8,
     cover: MeditationsCover,
     title: "Majestat Spokoju",
-    authors: ["William George Jordan"],
+    authors: [7],
     timeToRead: 10,
     purchaseLink: "https://www.enbook.pl/catalog/product/view/id/4944487",
     chapters: [

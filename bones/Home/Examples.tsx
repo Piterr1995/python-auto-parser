@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 
 import { Translations } from "enums";
-import { pills } from "data";
+import { pills, authors } from "data";
 import PillCard from "components/molecules/PillCard";
 
 const Container = styled.div`
@@ -36,16 +36,24 @@ const Examples = () => {
     <Container className="container" id="examples">
       <h1 className="xl">{t("home_examples_title")}</h1>
       <PillCardsContainer>
-        {pills.map((pill) => (
-          <PillCard
-            key={pill.id}
-            cover={pill.cover}
-            title={pill.title}
-            authors={pill.authors.join(", ")}
-            timeToRead={pill.timeToRead}
-            destinationUrl="/"
-          />
-        ))}
+        {pills.map((pill) => {
+          const pillAuthors = authors.filter((author) =>
+            pill.authors.includes(author.id)
+          );
+          const authorsNames = pillAuthors.map((author) => author.name);
+          const joinedAuthorsNames = authorsNames.join(", ");
+          return (
+            <PillCard
+              key={pill.id}
+              cover={pill.cover}
+              title={pill.title}
+              authors={joinedAuthorsNames}
+              timeToRead={pill.timeToRead}
+              destinationUrl={`/pill-details/${pill.id}`}
+            />
+          );
+        })}
+        ;
       </PillCardsContainer>
     </Container>
   );

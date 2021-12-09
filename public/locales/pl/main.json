@@ -4,7 +4,7 @@
 
   "home_pros_header": "Dlaczego Bookpill?",
 
-  "home_book_reading_statistics": "<p>Średni czas czytania książki zawierającej 300 stron wynosi \nokoło <b>9 godzin</b>. Dzięki Just Glance It poznasz jej główną\ntreść <b>w zaledwie kilka minut!<b></p>",
+  "home_pill_reading_statistics": "<p>Średni czas czytania książki zawierającej 300 stron wynosi \nokoło <b>9 godzin</b>. Dzięki Just Glance It poznasz jej główną\ntreść <b>w zaledwie kilka minut!<b></p>",
 
   "home_first_pros_title": "Poznajesz to, co naprawdę istotne",
   "home_first_pros_description": "Dzięki BookPill poznasz najważniejsze założenia i kluczowe koncepcje z książek, których przeczytanie zajmuje średnio 9 godzin.",
@@ -41,23 +41,21 @@
 
   "pill_details_full_title": "Pełny tytuł",
   "pill_details_categories": "Kategorie",
-  "pill_details_book_description": "Opis książki",
+  "pill_details_pill_description": "Opis książki",
   "pill_details_about_authors": "O autorach",
 
-  "home_join_our_community_section_title": "Zainteresowany?",
-  "home_join_our_community_section_description": "Dołącz do społeczności czytelników Just Glance It już teraz !",
+  "pill_content_next_page": "Następna",
+  "pill_content_previous_page": "Poprzednia",
+  "pill_content_navigation": "Nawigacja",
+  "pill_content_tutorial_title": "Instrukcja",
+  "pill_content_tutorial_text_press_info": "Kliknięcie w tekst spowoduje pojawienie/ukrycie się menu i paska postępu",
+  "pill_content_tutorial_library_info": "Powrót do biblioteki",
+  "pill_content_tutorial_chapter_list_info": "Lista rozdziałów i nawigacja",
+  "pill_content_tutorial_theme_change_info": "Zmiana na tryb nocny/dzienny",
+  "pill_content_tutorial_font_size_change_info": "Zmiana rozmiaru czcionki",
 
   "dashboard_glance_of_the_day": "Glance dnia",
   "dashboard_selected_for_user": "Wybrane dla Ciebie",
-
-  "payments_add_payment_title": "Dodaj płatność",
-  "payments_payment_request_info": "Zlecenie realizacji płatności: Zlecenie wykonuje PayU SA; Dane odbiorcy, tytuł oraz kwota płatności dostarczane są PayU SA przez odbiorcę; Zlecenie jest przekazywane do realizacji po otrzymaniu przez PayU SA Państwa wpłaty. Płatność udostępniana jest odbiorcy w ciągu 1 godziny, nie później niż do końca następnego dnia roboczego; PayU SA nie pobiera opłaty od realizacji usługi.",
-  "payments_policies_confirmation_info_first_part": "Płacąc akceptujesz",
-  "payments_policies_confirmation_info_link_to_policies_text": "Zasady płatności PayU",
-  "payments_policies_confirmation_info_link_to_policies": "http://static.payu.com/sites/terms/files/payu_terms_of_service_single_transaction_pl_pl.pdf",
-  "payments_personal_data_protection_info": "Administratorem Twoich danych osobowych jest PayU S.A. z siedzibą w Poznaniu (60-166), przy ul. Grunwaldzkiej 186. Twoje dane osobowe będą przetwarzane w celu realizacji transakcji płatniczej, powiadamiania Cię o statusie realizacji Twojej płatności, rozpatrywania reklamacji, a także w celu wypełnienia obowiązków prawnych ciążących na PayU.",
-  "payments_personal_data_potential_recipients_visible_part": "Odbiorcami Twoich danych osobowych mogą być podmioty współpracujące z PayU w procesie realizacji płatności.",
-  "payments_personal_data_potential_recipients_hidden_part": "W zależności od wybranej przez Ciebie metody płatności mogą to być: banki, instytucje płatnicze, instytucje pożyczkowe, organizacje kart płatniczych, schematy płatnicze), ponadto podmioty wspierające działalność PayU tj. dostawcy infrastruktury IT, dostawcy narzędzi do analizy ryzyka płatności a także podmiotom uprawnionym do ich otrzymania na mocy obowiązujących przepisów prawa, w tym właściwym organom wymiaru sprawiedliwości. Twoje dane mogą zostać udostępnione akceptantom celem poinformowania ich o statusie realizacji płatności. Przysługuje Tobie prawo dostępu do danych, a także do ich sprostowania, ograniczenia ich przetwarzania, zgłoszenia sprzeciwu wobec ich przetwarzania, niepodlegania zautomatyzowanemu podejmowaniu decyzji w tym profilowania oraz do przenoszenia i usunięcia danych. Podanie danych jest dobrowolne jednak niezbędne do realizacji płatności, a brak podania danych może skutkować odrzuceniem płatności. Więcej informacji o zasadach przetwarzania Twoich danych osobowych przez PayU znajdziesz w Polityce Prywatności.",
 
   "payments_show_more_details": "pokaż więcej",
   "payments_show_less_details": "zwiń",
@@ -75,8 +73,8 @@
   "payments_card_add_default_error": "Nieudało się poprawnie dodać karty. Spróbuj ponownie później.",
   "payments_card_already_added_or_invalid_token_provided_error": "Karta została już wcześniej dodana lub wystąpił błąd podczas jej konwersji.",
 
-  "book_request_title": "Dodaj propozycję streszczenia",
-  "book_request_placeholder": "Tytuł książki, autorzy",
+  "pill_request_title": "Dodaj propozycję streszczenia",
+  "pill_request_placeholder": "Tytuł książki, autorzy",
 
   "shorten_for_premium_title": "Streszczaj za premium!",
   "shorten_for_premium_description": "Chciałbyś się podzielić swoim streszczeniem lub stworzyć jedno z poniższych? Wyślij swoje dzieło na books@justjoin.it i zgarnij premium! Twój tekst będzie analizowany i jeżeli okaże się, że jest jakościowy, z pewnością JustGlance.it Cię wynagrodzi :)",

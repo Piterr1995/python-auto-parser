@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
+import slugify from "slugify";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
+import { useRouter } from "next/router";
 import Button from "components/atoms/Button";
-import PillInfoSwitch from "bones/PillDetails/PillInfoSwitch";
+import PillInfoSwitch from "bones/pill-details/PillInfoSwitch";
 import { Translations, Breakpoints } from "enums";
 import { useAppContext } from "hooks/useAppContext";
 import { pills, authors } from "data";
@@ -12,6 +13,7 @@ import Spacer from "components/atoms/Spacer";
 
 const StyledButton = styled(Button)`
   text-decoration: none;
+  cursor: pointer;
 `;
 const Card = styled.div`
   padding: 1.5rem;
@@ -73,7 +75,15 @@ const PillDetails = ({ pill, pillAuthors }: any) => {
   const { cover, title, timeToRead, purchaseLink } = pill;
   const authorNames = pillAuthors.map((author: any) => author.name);
   const authorsString = authorNames.join(", ");
+  const router = useRouter();
 
+  const handleGoToPillContent = (pillId: number, pillTitle: string) => {
+    const titleSlug = slugify(pillTitle);
+    const authorsSlug = slugify(authorsString);
+    router.push(
+      `/pill-details/${pillId}/content?title=${titleSlug}&authors=${authorsSlug}`
+    );
+  };
   return (
     <>
       {state.windowWidth < Breakpoints.BIG_TABLET ? (
@@ -88,7 +98,11 @@ const PillDetails = ({ pill, pillAuthors }: any) => {
               <AiOutlineClockCircle size={20} /> <span>{timeToRead} min.</span>
             </div>
             <ButtonsContainer>
-              <Button>Czytaj</Button>{" "}
+              <StyledButton
+                onClick={() => handleGoToPillContent(pill.id, pill.title)}
+              >
+                Czytaj
+              </StyledButton>{" "}
               <StyledButton
                 secondary
                 as="a"
@@ -109,7 +123,7 @@ const PillDetails = ({ pill, pillAuthors }: any) => {
             </div>
           </CardData>
           <PillInfoSwitch
-            bookDescription={"<p>Hello</p>"}
+            pillDescription={"<p>Hello</p>"}
             authors={pillAuthors}
           />{" "}
         </Card>

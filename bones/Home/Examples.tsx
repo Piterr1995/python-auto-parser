@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useTranslation } from "next-i18next";
+import slugify from "slugify";
 
 import { Translations } from "enums";
 import { pills, authors } from "data";
@@ -42,6 +43,7 @@ const Examples = () => {
           );
           const authorsNames = pillAuthors.map((author) => author.name);
           const joinedAuthorsNames = authorsNames.join(", ");
+          const titleSlug = slugify(pill.title);
           return (
             <PillCard
               key={pill.id}
@@ -49,11 +51,10 @@ const Examples = () => {
               title={pill.title}
               authors={joinedAuthorsNames}
               timeToRead={pill.timeToRead}
-              destinationUrl={`/pill-details/${pill.id}`}
+              destinationUrl={`/pill-details/${pill.id}?title=${titleSlug}`}
             />
           );
         })}
-        ;
       </PillCardsContainer>
     </Container>
   );

@@ -34,28 +34,28 @@ const AuthorsInfo = ({ authors }: any) => (
 );
 
 enum TabTypes {
-  BOOK_DESCRIPTION,
+  PILL_DESCRIPTION,
   ABOUT_AUTHORS,
 }
 type BookInfoSwitchProps = {
-  bookDescription: string;
+  pillDescription: string;
   authors: object[];
 };
-const BookInfoSwitch = ({ bookDescription, authors }: BookInfoSwitchProps) => {
+const BookInfoSwitch = ({ pillDescription, authors }: BookInfoSwitchProps) => {
   const { t } = useTranslation(Translations.MAIN);
   const [activeTab, setActiveTab] = useState<TabTypes>(
-    TabTypes.BOOK_DESCRIPTION
+    TabTypes.PILL_DESCRIPTION
   );
 
   const displayContent = {
-    [TabTypes.BOOK_DESCRIPTION]: parse(bookDescription),
+    [TabTypes.PILL_DESCRIPTION]: parse(pillDescription),
     [TabTypes.ABOUT_AUTHORS]: <AuthorsInfo authors={authors} />,
   };
 
   const switchItems = [
     {
-      name: t("pill_details_book_description"),
-      value: TabTypes.BOOK_DESCRIPTION,
+      name: t("pill_details_pill_description"),
+      value: TabTypes.PILL_DESCRIPTION,
     },
     {
       name: t("pill_details_about_authors"),

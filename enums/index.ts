@@ -6,12 +6,12 @@ export enum Translations {
 
 export enum Routes {
   ABOUT = "/about-us",
-  BOOK_LIST = "/book-list",
+  pill_LIST = "/book-list",
   AUTHOR = "/author/:authorId",
   ACCOUNT = "/account",
-  BOOK_CONTENT = "/book/content/:bookId/:bookName",
-  BOOK_DETAILS = "/book/:bookId/:bookName",
-  BOOK_REQUEST = "/book-request",
+  PILL_CONTENT = "/pill/:pillId/content",
+  PILL_DETAILS = "/pill/:bookId",
+  PILL_REQUEST = "/pill-request",
   CATEGORIES = "/categories",
   CATEGORY_BOOKS = "/categories/:categoryId/:categoryName",
   CONTACT = "/contact",

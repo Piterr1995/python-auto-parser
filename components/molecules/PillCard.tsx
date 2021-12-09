@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import styled from "styled-components";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import Spacer from "components/atoms/Spacer";
@@ -65,19 +67,21 @@ const PillCard = ({
   destinationUrl,
 }: PillCardProps) => {
   return (
-    <A href={destinationUrl}>
-      <Card className="shadow">
-        <img src={cover} />
-        <div className="data">
-          <h1 className="title">{title}</h1>
-          <h2 className="authors">{authors}</h2>
-          <div className="time-wrapper">
-            <AiOutlineClockCircle size={20} />
-            <Spacer x={3} /> <span>{timeToRead} min.</span>
+    <Link href={destinationUrl}>
+      <A>
+        <Card className="shadow">
+          <img src={cover} />
+          <div className="data">
+            <h1 className="title">{title}</h1>
+            <h2 className="authors">{authors}</h2>
+            <div className="time-wrapper">
+              <AiOutlineClockCircle size={20} />
+              <Spacer x={3} /> <span>{timeToRead} min.</span>
+            </div>
           </div>
-        </div>
-      </Card>
-    </A>
+        </Card>
+      </A>
+    </Link>
   );
 };
 

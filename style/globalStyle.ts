@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         --red100: hsl(0, 70%, 64%);
         --lightgray100: hsl(0, 0%, 96%);
         --normalPadding: 2rem;
+ 
     }
     * {
       box-sizing: border-box;
@@ -122,6 +123,11 @@ export const GlobalStyle = createGlobalStyle`
 
     .container {
       padding: 0 2rem;
+
+      @media screen and ${theme.breakpoints.bigTablet}{
+        width: 1200px;
+        margin: auto;
+      }
     }
 
     .auth-form-wrapper {

@@ -9,6 +9,7 @@ const QuoteWrapper = styled.div`
   text-align: center;
   font-weight: 500;
   padding: 15px;
+  font-size: 1.3rem;
   background: url(${BubbleBackground});
 `;
 

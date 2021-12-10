@@ -5,6 +5,7 @@ import slugify from "slugify";
 import { Translations } from "enums";
 import { pills, authors } from "data";
 import PillCard from "components/molecules/PillCard";
+import { theme } from "style/theme";
 
 const Container = styled.div`
   /* background-color: var(--grey100); */
@@ -18,9 +19,13 @@ const PillCardsContainer = styled.div`
   width: 80%;
   margin: auto;
 
+  @media screen and ${theme.breakpoints.bigTablet} {
+    grid-template-columns: repeat(3, 1fr);
+  }
   img {
     width: 100%;
   }
+
   /* &::-webkit-scrollbar {
     display: none;
   }

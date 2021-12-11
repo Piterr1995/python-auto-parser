@@ -1,8 +1,18 @@
 export {};
 
-const ThinkAndGetRichCover = "/images/book-covers/ThinkAndGetRich.svg";
+const ThinkAndGrowRichCover = "/images/book-covers/ThinkAndGrowRich.svg";
 const MeditationsCover = "/images/book-covers/Meditations.svg";
-const ProphetCover = "/images/book-covers/Prophet.svg";
+const TheProphetCover = "/images/book-covers/TheProphet.svg";
+const BenjaminFranklinAuutobiographyCover =
+  "/images/book-covers/BenjaminFranklinAutobiography.svg";
+const TheArtOfMoneyGettingCover =
+  "/images/book-covers/TheArtOfMoneyGetting.svg";
+const TheRichestManInBabylonCover =
+  "/images/book-covers/TheRichestManInBabylon.svg";
+const TheScienceOfGettingRichCover =
+  "/images/book-covers/TheScienceOfGettingRich.svg";
+const TheMajestyOfCalmnessCover =
+  "/images/book-covers/TheMajestyOfCalmness.svg";
 
 export const authors = [
   {
@@ -52,7 +62,7 @@ export const authors = [
 export const pills = [
   {
     id: 1,
-    cover: ThinkAndGetRichCover,
+    cover: ThinkAndGrowRichCover,
     title: "Myśl i bogać się",
     authors: [1],
     timeToRead: 10,
@@ -67,7 +77,7 @@ export const pills = [
   },
   {
     id: 2,
-    cover: ProphetCover,
+    cover: TheProphetCover,
     title: "Prorok",
     authors: [2],
 
@@ -82,7 +92,7 @@ export const pills = [
   },
   {
     id: 3,
-    cover: MeditationsCover,
+    cover: TheArtOfMoneyGettingCover,
     title: "Sztuka wzbogacania się",
     authors: [3],
     timeToRead: 10,
@@ -484,7 +494,7 @@ export const pills = [
   },
   {
     id: 4,
-    cover: MeditationsCover,
+    cover: TheRichestManInBabylonCover,
     title: "Najbogatszy człowiek w Babilonie",
     authors: [4],
     timeToRead: 10,
@@ -499,7 +509,7 @@ export const pills = [
   },
   {
     id: 5,
-    cover: MeditationsCover,
+    cover: BenjaminFranklinAuutobiographyCover,
     title: "Benjamin Franklin Autobiografia",
     authors: [8],
     timeToRead: 10,
@@ -514,7 +524,7 @@ export const pills = [
   },
   {
     id: 6,
-    cover: MeditationsCover,
+    cover: TheArtOfMoneyGettingCover,
     title: "Sztuka zdobywania pieniędzy",
     authors: [5],
     timeToRead: 10,
@@ -544,7 +554,7 @@ export const pills = [
   },
   {
     id: 8,
-    cover: MeditationsCover,
+    cover: TheMajestyOfCalmnessCover,
     title: "Majestat Spokoju",
     authors: [7],
     timeToRead: 10,

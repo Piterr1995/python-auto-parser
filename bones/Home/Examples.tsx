@@ -7,9 +7,10 @@ import { pills, authors } from "data";
 import PillCard from "components/molecules/PillCard";
 import { theme } from "style/theme";
 
-const Container = styled.div`
-  /* background-color: var(--grey100); */
+const H1 = styled.h1`
+  font-size: var(--xl);
 `;
+
 const PillCardsContainer = styled.div`
   display: grid;
   /* grid-template-columns: repeat(2, 1fr); */
@@ -39,8 +40,8 @@ const PillCardsContainer = styled.div`
 const Examples = () => {
   const { t } = useTranslation(Translations.MAIN);
   return (
-    <Container className="container" id="examples">
-      <h1 className="xl">{t("home_examples_title")}</h1>
+    <div className="container" id="examples">
+      <H1>{t("home_examples_title")}</H1>
       <PillCardsContainer>
         {pills.map((pill) => {
           const pillAuthors = authors.filter((author) =>
@@ -61,7 +62,7 @@ const Examples = () => {
           );
         })}
       </PillCardsContainer>
-    </Container>
+    </div>
   );
 };
 

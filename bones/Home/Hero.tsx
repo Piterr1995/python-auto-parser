@@ -27,28 +27,47 @@ const slideUp = (start: number, end: number) => keyframes`
     
 `;
 
+const Container = styled.div`
+  --navbar-height: 7rem;
+`;
+
+const StyledH1 = styled.h1`
+  font-size: var(--xxl);
+  font-weight: 500;
+`;
+
 const Navbar = styled.nav`
   z-index: 3;
   color: white;
-  font-size: 2rem;
+  font-size: 2.2rem;
   padding: var(--normalPadding);
   font-weight: 700;
   /* position: absolute; */
   top: 0;
-  height: 5rem;
+  /* height: 7rem; */
+  height: var(--navbar-height);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  .book-pill-logo-text {
+    @media screen and ${theme.breakpoints.bigTablet} {
+      font-size: var(--xl);
+    }
+  }
   button {
     font-weight: 600;
     color: white;
     border: 2px solid white;
+    @media screen and ${theme.breakpoints.bigTablet} {
+      font-size: var(--s);
+      border: 4px solid white;
+    }
   }
 `;
 const HeroSection = styled.div`
-  --gradientContainerHeight: calc(33vh + 10vw);
+  --gradientContainerHeight: calc(37vh + 10vw - var(--navbar-height));
 
   position: relative;
   /* height: calc(var(--gradientContainerHeight) + 200px); */
@@ -90,7 +109,7 @@ const HeroSection = styled.div`
     }
     .text {
       display: grid;
-      grid-gap: 2rem;
+      grid-gap: 3rem;
 
       @media screen and ${theme.breakpoints.bigTablet} {
         grid-gap: 4rem;
@@ -105,7 +124,9 @@ const HeroSection = styled.div`
       }
 
       p {
-        font-size: 1.6rem;
+        font-size: var(--s);
+        color: #505050;
+        line-height: 3rem;
         @media screen and ${theme.breakpoints.bigTablet} {
           width: 80%;
           font-size: 2rem;
@@ -119,7 +140,7 @@ const HeroSection = styled.div`
       button {
         width: 75%;
         border: 3px solid var(--black300);
-        font-size: 1.6rem;
+        font-size: var(--s);
         font-weight: 700;
 
         @media screen and ${theme.breakpoints.bigTablet} {
@@ -167,9 +188,9 @@ const Hero = () => {
     });
   };
   return (
-    <>
+    <Container>
       <Navbar className="container">
-        <span>BookPill</span>
+        <span className="book-pill-logo-text">BookPill</span>
         <Button tertiary onClick={handleScrollToPillExamples}>
           Wypróbuj za darmo
         </Button>
@@ -181,7 +202,9 @@ const Hero = () => {
         <div className="container">
           <div className="hero-data">
             <div className="text">
-              <h1 className="no-space xxl">{t("home_hero_section_title")}</h1>
+              <StyledH1 className="no-space">
+                {t("home_hero_section_title")}
+              </StyledH1>
               <p className="no-space">
                 {parse(t("home_hero_section_subtitle"))}
               </p>
@@ -196,7 +219,7 @@ const Hero = () => {
           {/* <h1 className="hero-header">Hello</h1> */}
         </div>
       </HeroSection>
-    </>
+    </Container>
   );
 };
 

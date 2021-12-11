@@ -5,6 +5,14 @@ import { theme } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
+        --xxs: 0.9rem;
+        --xs: 1.3rem;
+        --s: 1.6rem;
+        --m: 1.8rem;
+        --l: 2rem;
+        --xl: 2.4rem;
+        --xxl: 5.7rem;
+
         --purple100: hsl(276, 84%, 66%);
         --grey100: 	hsl(0, 0%, 40%);
         --green100: hsl(171, 100%, 39%);
@@ -18,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
         --red100: hsl(0, 70%, 64%);
         --lightgray100: hsl(0, 0%, 96%);
         --normalPadding: 2rem;
+     
  
     }
     * {
@@ -40,37 +49,36 @@ export const GlobalStyle = createGlobalStyle`
       padding: 0;
     };
 
-    .xxl {
-      font-weight: 500;
-        font-size: ${theme.fontSize.xxl};
-    }
-
-    .xl {
-      font-size: ${theme.fontSize.xl};
-    }
     h1 {
         font-weight: 700;
-        font-size: 1.8rem;
+        font-size: var(--m);
         @media screen and (min-width: $bigTabletBreakpoint) {
-          font-size: 2rem;
+          font-size: var(--l);
         }
         @media screen and (min-width: $desktopBreakpoint) {
-          font-size: 2.4rem;
+          font-size: var(--xl);
         }
     };
 
     h2 {
       font-weight: 600;
-      font-size: 1.6rem;
+      font-size: var(--s);
       color: var(--black200);
 
+      @media screen and ${theme.breakpoints.bigTablet} {
+        font-size: var(--m);
+      }
       @media screen and (min-width: $desktopBreakpoint) {
         font-size: 1.8rem;
       }
     };
-    /* p, span, i, ul, li, a, u {
-      font-size: 1.3rem;
-    } */
+    p, span, i, ul, li, a, u {
+      font-size: var(--xs);
+      
+      @media screen and ${theme.breakpoints.bigTablet} {
+        font-size: var(--s);
+      }
+    }
 
     .text-blue {
       color: var(--blue100);

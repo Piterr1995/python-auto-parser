@@ -7,6 +7,7 @@ import { animated, useSpring } from "react-spring";
 import { Translations } from "enums";
 import Wave from "components/atoms/Wave";
 import Spacer from "components/atoms/Spacer";
+import { theme } from "style/theme";
 
 const blobs = [
   "M47.2,-45.2C61.8,-32.6,74.6,-16.3,76.2,1.6C77.8,19.5,68.2,39.1,53.7,55.3C39.1,71.4,19.5,84.3,1.7,82.6C-16.2,80.9,-32.3,64.7,-43,48.5C-53.6,32.3,-58.8,16.2,-59.3,-0.5C-59.8,-17.1,-55.5,-34.2,-44.9,-46.7C-34.2,-59.3,-17.1,-67.2,-0.4,-66.8C16.3,-66.4,32.6,-57.7,47.2,-45.2Z",
@@ -88,15 +89,20 @@ const ProsContainer = styled.div`
   .pros-items-container {
     display: grid;
     grid-gap: 2.5rem;
+
+    @media screen and ${theme.breakpoints.bigTablet} {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 7rem;
+    }
     .pros {
       display: grid;
       grid-gap: 0.5rem;
       justify-content: space-around;
       z-index: 3;
 
-      p {
-        font-size: 1.3rem;
-      }
+      /* p {
+        font-size: var(--xs);
+      } */
     }
   }
 
@@ -163,6 +169,13 @@ const Pros = () => {
             </IconWrapper>
             <h2 className="no-space">{t("home_third_pros_title")}</h2>
             <p className="no-space">{t("home_third_pros_description")}</p>
+          </div>
+          <div className="pros">
+            <IconWrapper order={4}>
+              <BiBrain size={30} className="first-pros" />
+            </IconWrapper>
+            <h2 className="no-space">{t("home_fourth_pros_title")}</h2>
+            <p className="no-space">{t("home_fourth_pros_description")}</p>
           </div>
         </div>
       </div>

@@ -9,26 +9,96 @@ import { useToggle } from "hooks/useToggle";
 import { Translations } from "enums";
 import Wave from "components/atoms/Wave";
 import Spacer from "components/atoms/Spacer";
-
+import { theme } from "style/theme";
+import Blob from "components/atoms/Blob";
 const IphoneImage = "/images/iPhone.jpg";
 
 const Container = styled.div`
+  --image-width: 15rem;
+  --image-height: 28rem;
+
   padding: 2rem auto 0;
   text-align: center;
   width: 100%;
-
-  .description,
-  .title,
   svg {
     color: white;
   }
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    --image-width: 20rem;
+    --image-height: 40rem;
+  }
 `;
 
+const ContentContainer = styled.div`
+  .description,
+  .title {
+    color: white;
+  }
+  .description {
+    font-weight: bold;
+  }
+
+  .blob-container {
+    display: none;
+  }
+  @media screen and ${theme.breakpoints.bigTablet} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(20, 2rem);
+
+    .description,
+    .title {
+      color: var(--black300) !important;
+      text-align: left;
+    }
+
+    svg {
+      color: var(--green100);
+      transform: scale(1.2, 1.2);
+    }
+
+    .title {
+      grid-row: 1 / 3;
+      grid-column: 1;
+      font-size: 3.5rem;
+    }
+
+    .description {
+      grid-row: 5 / 11;
+      grid-column: 1;
+      font-size: 2.6rem;
+      font-weight: 400;
+    }
+
+    .blob-container {
+      grid-row: 12 / 17;
+      grid-column: 1;
+      width: 100%;
+      display: block;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      svg {
+        width: 13%;
+      }
+    }
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+`;
 const ImageWrapper = styled.div`
   position: relative;
-  width: 15rem;
+  width: var(--image-width);
   margin: auto;
-  height: 28rem;
+  height: var(--image-height);
+
+  /* @media screen and ${theme.breakpoints.bigTablet} {
+    height: 40rem;
+    width: 23rem;
+  } */
 `;
 
 type PhoneImageContentProps = {
@@ -36,8 +106,6 @@ type PhoneImageContentProps = {
   isDarkTheme: boolean;
 };
 const PhoneImageContent = styled.div<PhoneImageContentProps>`
-  /* z-index: -1; */
-
   color: ${({ isDarkTheme, theme }) =>
     isDarkTheme ? "white" : "var(--black300)"};
 
@@ -48,8 +116,9 @@ const PhoneImageContent = styled.div<PhoneImageContentProps>`
   margin-left: auto;
   margin-right: auto;
   padding: 1rem 0.5rem;
-  height: 26.4rem;
-  width: 13rem;
+  /* height: 26.4rem; */
+  height: calc(var(--image-height) - 1.6rem);
+  width: calc(var(--image-width) - 2rem);
   border-radius: 1rem;
   overflow: scroll;
   &::-webkit-scrollbar {
@@ -57,13 +126,21 @@ const PhoneImageContent = styled.div<PhoneImageContentProps>`
   }
   scrollbar-width: none;
   cursor: pointer;
-  left: 0px;
+  left: 0;
   right: 0;
   top: 0.7rem;
   p,
   b {
     margin: 0 0 0.5rem;
     font-size: ${({ fontSize }) => fontSize + "rem"};
+  }
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    border-radius: 2rem;
+    p,
+    b {
+      font-size: var(--s);
+    }
   }
 `;
 const Img = styled.img`
@@ -80,12 +157,12 @@ type AnimatedIconProps = {
   left?: number;
 };
 
-const iconAnimation = (top: number) => keyframes`
+const iconAnimation = keyframes`
   0% {
-    top: ${top - 5}px;
+    top: calc(var(--image-height) / 2 - 5rem);
   }
   100% {
-    top: ${top + 5}px;
+    top: calc(var(--image-height) / 2 - 4rem );
   }
 `;
 const AnimatedIcon = styled(
@@ -96,26 +173,22 @@ const AnimatedIcon = styled(
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  cursor: pointer;
+  // cursor: pointer;
 
-  &:last-child {
-    animation-delay: 0.6s;
-  }
-  ${({ top }) =>
-    top &&
-    css`
-      top: ${top}px;
-      animation-name: ${iconAnimation(top)};
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-      animation-timing-function: ease-out;
-    `}
-  ${({ left }) =>
-    left &&
-    css`
-      left: ${left}px;
-    `}
+  // &:last-child {
+  //   animation-delay: 0.6s;
+  // }
+
+  top: calc(var(--image-height) / 2);
+  // animation-name: ${iconAnimation};
+  // animation-duration: 1s;
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate;
+  // animation-timing-function: ease-out;
+
+  // margin: auto;
+  // right: auto;
+  // left: calc(var(--image-width) / 2 + 10rem);
 `;
 
 const fontSizeOptions = [1.1, 1.2, 1.3, 1.4, 1.5];
@@ -135,40 +208,41 @@ const Demo = () => {
     setPresentationFontSize(nextFontSize);
   };
   return (
-    <Container className="gradient">
+    <Container className="gradient gradient-hide-big-tablet">
       <Wave reverse />
-      <h2 className="title">{t("home_demo_presentation_title")}</h2>
-      <ImageWrapper>
-        <Img src={IphoneImage} />
-        <PhoneImageContent
-          fontSize={presentationFontSize}
-          isDarkTheme={isDarkTheme}
-        >
-          <p className="demo-content-title">
-            <b>{t("home_demo_presentation_pill_title")}</b>
-          </p>
-          <p className="demo-content">
-            {t("home_demo_presentation_pill_content")}
-          </p>
-        </PhoneImageContent>
-        <AnimatedIcon
-          component={BiFontSize}
-          size={42}
-          top={100}
-          left={170}
-          onClick={handleFontSizeChange}
-        />
-        <AnimatedIcon
-          component={isDarkTheme ? BsMoonStars : BsSun}
-          size={42}
-          top={100}
-          left={-60}
-          onClick={toggleIsDarkTheme}
-        />
-      </ImageWrapper>
-      <p className="description">
-        <b>{t("home_demo_presentation_description")}</b>
-      </p>
+      <ContentContainer className="container">
+        <h2 className="title">{t("home_demo_presentation_title")}</h2>
+        <ImageContainer>
+          <ImageWrapper>
+            <Img src={IphoneImage} />
+            <PhoneImageContent
+              fontSize={presentationFontSize}
+              isDarkTheme={isDarkTheme}
+            >
+              <p className="demo-content-title">
+                <b>{t("home_demo_presentation_pill_title")}</b>
+              </p>
+              <p className="demo-content">
+                {t("home_demo_presentation_pill_content")}
+              </p>
+            </PhoneImageContent>
+          </ImageWrapper>
+          <AnimatedIcon
+            component={BiFontSize}
+            size={42}
+            onClick={handleFontSizeChange}
+          />
+          <AnimatedIcon
+            component={isDarkTheme ? BsMoonStars : BsSun}
+            size={42}
+            onClick={toggleIsDarkTheme}
+          />
+        </ImageContainer>
+        <p className="description">{t("home_demo_presentation_description")}</p>
+        <div className="blob-container">
+          <Blob transition={2000} />
+        </div>
+      </ContentContainer>
       <Spacer y={8} />
     </Container>
   );

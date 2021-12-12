@@ -9,7 +9,7 @@ const CardBackground = "/images/dynamic-style.png";
 const Card = styled.div`
   border-radius: 1.5rem;
   background: url(${CardBackground});
-  border: 4px solid #cacaca;
+  /* border: 4px solid #cacaca; */
   img {
     width: 100%;
     aspect-ratio: 1 / 1;

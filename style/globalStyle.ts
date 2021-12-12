@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
         --bootstrapDark: hsl(210, 10%, 23%);
         --red100: hsl(0, 70%, 64%);
         --lightgray100: hsl(0, 0%, 96%);
+        --lightgray200: hsl(0, 0%, 93%);
         --normalPadding: 2rem;
      
  
@@ -42,11 +43,16 @@ export const GlobalStyle = createGlobalStyle`
 
     }
     body {
-      font-size: 1.6rem;
+      font-size: var(--xs);
       letter-spacing: 0.5px;
       color: var(--black300);
       margin: 0;
       padding: 0;
+
+      @media screen and ${theme.breakpoints.bigTablet}{
+        font-size: var(--s)
+      }
+
     };
 
     h1 {
@@ -72,13 +78,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1.8rem;
       }
     };
-    p, span, i, ul, li, a, u {
-      font-size: var(--xs);
-      
-      @media screen and ${theme.breakpoints.bigTablet} {
-        font-size: var(--s);
-      }
-    }
+ 
 
     .text-blue {
       color: var(--blue100);
@@ -99,6 +99,12 @@ export const GlobalStyle = createGlobalStyle`
         var(--blue100)
       );
     };
+
+    .gradient-hide-big-tablet {
+      @media screen and ${theme.breakpoints.bigTablet}{
+        background: var(--lightgray200) !important;
+      }
+    }
 
     .no-space {
       margin: 0;

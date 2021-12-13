@@ -6,8 +6,31 @@ import { Translations } from "enums";
 import { pills, authors } from "data";
 import PillCard from "components/molecules/PillCard";
 import { theme } from "style/theme";
+import Blob from "components/atoms/Blob";
 
 const Container = styled.div`
+  position: relative;
+
+  .blob-container {
+    display: none;
+    @media screen and ${theme.breakpoints.bigTablet} {
+      --blob-container-width: 50rem;
+      --blob-position: calc(-1 * var(--blob-container-width) / 1.5);
+      position: absolute;
+      width: var(--blob-container-width);
+      display: block;
+      &:nth-child(1) {
+        top: 65%;
+        left: var(--blob-position);
+      }
+      &:nth-child(2) {
+        top: 15%;
+        right: var(--blob-position);
+      }
+    }
+  }
+`;
+const ContentContainer = styled.div`
   @media screen and ${theme.breakpoints.bigTablet} {
     padding-top: 5rem !important;
   }
@@ -45,28 +68,36 @@ const PillCardsContainer = styled.div`
 const Examples = () => {
   const { t } = useTranslation(Translations.MAIN);
   return (
-    <Container className="container" id="examples">
-      <H1>{t("home_examples_title")}</H1>
-      <PillCardsContainer>
-        {pills.map((pill) => {
-          const pillAuthors = authors.filter((author) =>
-            pill.authors.includes(author.id)
-          );
-          const authorsNames = pillAuthors.map((author) => author.name);
-          const joinedAuthorsNames = authorsNames.join(", ");
-          const titleSlug = slugify(pill.title);
-          return (
-            <PillCard
-              key={pill.id}
-              cover={pill.cover}
-              title={pill.title}
-              authors={joinedAuthorsNames}
-              timeToRead={pill.timeToRead}
-              destinationUrl={`/pill-details/${pill.id}?title=${titleSlug}`}
-            />
-          );
-        })}
-      </PillCardsContainer>
+    <Container>
+      <div className="blob-container first">
+        <Blob transition={3000} />
+      </div>
+      <div className="blob-container 2">
+        <Blob transition={3000} />
+      </div>
+      <ContentContainer className="container" id="examples">
+        <H1>{t("home_examples_title")}</H1>
+        <PillCardsContainer>
+          {pills.map((pill) => {
+            const pillAuthors = authors.filter((author) =>
+              pill.authors.includes(author.id)
+            );
+            const authorsNames = pillAuthors.map((author) => author.name);
+            const joinedAuthorsNames = authorsNames.join(", ");
+            const titleSlug = slugify(pill.title);
+            return (
+              <PillCard
+                key={pill.id}
+                cover={pill.cover}
+                title={pill.title}
+                authors={joinedAuthorsNames}
+                timeToRead={pill.timeToRead}
+                destinationUrl={`/pill-details/${pill.id}?title=${titleSlug}`}
+              />
+            );
+          })}
+        </PillCardsContainer>
+      </ContentContainer>
     </Container>
   );
 };

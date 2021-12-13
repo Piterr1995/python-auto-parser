@@ -18,18 +18,52 @@ const Container = styled.div`
   --image-height: 28rem;
 
   padding: 2rem auto 0;
+  position: relative;
   text-align: center;
   width: 100%;
+  overflow: hidden;
   svg {
     color: white;
   }
 
+  .blob-container {
+    display: none;
+  }
   @media screen and ${theme.breakpoints.bigTablet} {
     --image-width: 20rem;
     --image-height: 40rem;
+
+    padding-bottom: 5rem;
+
+    .blob-container {
+      --blob-container-width: 50rem;
+      position: absolute;
+
+      display: block;
+      width: var(--blob-container-width);
+      justify-content: space-around;
+      z-index: 1;
+      svg {
+        width: 100%;
+      }
+
+      top: 30%;
+      right: calc(-1 * var(--blob-container-width) / 1.5);
+    }
   }
 `;
 
+const widthAnimation = keyframes`
+  0% {
+    width: 0%;
+  }
+  10% {
+    width: 99%;
+  }
+  100% {
+    width: 100%;
+  }
+`;
 const ContentContainer = styled.div`
   .description,
   .title {
@@ -39,10 +73,8 @@ const ContentContainer = styled.div`
     font-weight: bold;
   }
 
-  .blob-container {
-    display: none;
-  }
   @media screen and ${theme.breakpoints.bigTablet} {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(20, 2rem);
@@ -71,17 +103,12 @@ const ContentContainer = styled.div`
       font-weight: 400;
     }
 
-    .blob-container {
-      grid-row: 12 / 17;
+    .line {
+      border: 5px solid var(--green100);
       grid-column: 1;
+      grid-row: 14;
       width: 100%;
-      display: block;
-      text-align: center;
-      display: flex;
-      justify-content: space-around;
-      svg {
-        width: 13%;
-      }
+      animation: 10s ${widthAnimation} ease-in-out infinite;
     }
   }
 `;
@@ -153,8 +180,6 @@ type AnimatedIconProps = {
   onClick: () => void;
   delay?: number;
   size?: number;
-  top?: number;
-  left?: number;
 };
 
 const iconAnimation = keyframes`
@@ -171,24 +196,23 @@ const AnimatedIcon = styled(
   )
 )`
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  // cursor: pointer;
 
-  // &:last-child {
-  //   animation-delay: 0.6s;
-  // }
+  &:first-of-type {
+    transform: translateX(calc(-50% - (var(--image-width) / 2) - 4rem));
+  }
+  cursor: pointer;
 
-  top: calc(var(--image-height) / 2);
-  // animation-name: ${iconAnimation};
-  // animation-duration: 1s;
-  // animation-iteration-count: infinite;
-  // animation-direction: alternate;
-  // animation-timing-function: ease-out;
+  &:last-of-type {
+    animation-delay: 0.6s;
+    transform: translateX(calc(-50% + var(--image-width) / 2 + 4rem));
+  }
 
-  // margin: auto;
-  // right: auto;
-  // left: calc(var(--image-width) / 2 + 10rem);
+  top: calc(var(--image-height) / 2 - 2rem);
+  animation-name: ${iconAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
 `;
 
 const fontSizeOptions = [1.1, 1.2, 1.3, 1.4, 1.5];
@@ -209,6 +233,10 @@ const Demo = () => {
   };
   return (
     <Container className="gradient gradient-hide-big-tablet">
+      <div className="blob-container">
+        <Blob transition={3000} />
+      </div>
+
       <Wave reverse />
       <ContentContainer className="container">
         <h2 className="title">{t("home_demo_presentation_title")}</h2>
@@ -227,21 +255,20 @@ const Demo = () => {
               </p>
             </PhoneImageContent>
           </ImageWrapper>
-          <AnimatedIcon
-            component={BiFontSize}
-            size={42}
-            onClick={handleFontSizeChange}
-          />
+
           <AnimatedIcon
             component={isDarkTheme ? BsMoonStars : BsSun}
             size={42}
             onClick={toggleIsDarkTheme}
           />
+          <AnimatedIcon
+            component={BiFontSize}
+            size={42}
+            onClick={handleFontSizeChange}
+          />
         </ImageContainer>
         <p className="description">{t("home_demo_presentation_description")}</p>
-        <div className="blob-container">
-          <Blob transition={2000} />
-        </div>
+        <hr className="line" />
       </ContentContainer>
       <Spacer y={8} />
     </Container>

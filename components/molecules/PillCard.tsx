@@ -10,6 +10,7 @@ const Card = styled.div`
   border-radius: 1.5rem;
   background: url(${CardBackground});
   /* border: 4px solid #cacaca; */
+  cursor: pointer;
   img {
     width: 100%;
     aspect-ratio: 1 / 1;

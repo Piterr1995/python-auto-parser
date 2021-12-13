@@ -166,9 +166,9 @@ const Pros = () => {
           </div>
         </div>
       </div>
-      <div className="blob-container">
+      {/* <div className="blob-container">
         <Blob transition={2000} />
-      </div>
+      </div> */}
       <Spacer y={20} />
     </ProsContainer>
   );

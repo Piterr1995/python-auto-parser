@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { theme } from "style/theme";
 const SwitchWrapper = styled.div`
   margin: 10px 10px 20px 0;
   span {
@@ -12,6 +12,10 @@ const SwitchWrapper = styled.div`
       font-weight: 600;
       border-bottom: 1px solid var(--green100);
     }
+  }
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    font-size: var(--m);
   }
 `;
 

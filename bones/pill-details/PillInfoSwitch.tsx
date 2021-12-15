@@ -5,22 +5,36 @@ import { Translations } from "enums";
 import styled from "styled-components";
 import Switch from "components/molecules/Switch";
 import parse from "html-react-parser";
+import { theme } from "style/theme";
 
 const Content = styled.div`
   * {
     font-size: 1.5rem;
+  }
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    * {
+      font-size: var(--s);
+    }
   }
 `;
 
 const AuthorsInfoWrapper = styled.div`
   display: grid;
   grid-gap: 1rem;
+
   .author {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--grey200);
     margin: 0.5rem 0;
   }
+
+  /* @media screen and ${theme.breakpoints.bigTablet} {
+    .author {
+      font-size: var(--s);
+    }
+  } */
 `;
 const AuthorsInfo = ({ authors }: any) => (
   <AuthorsInfoWrapper>
@@ -37,11 +51,11 @@ enum TabTypes {
   PILL_DESCRIPTION,
   ABOUT_AUTHORS,
 }
-type BookInfoSwitchProps = {
+type PillInfoSwitchProps = {
   pillDescription: string;
   authors: object[];
 };
-const BookInfoSwitch = ({ pillDescription, authors }: BookInfoSwitchProps) => {
+const BookInfoSwitch = ({ pillDescription, authors }: PillInfoSwitchProps) => {
   const { t } = useTranslation(Translations.MAIN);
   const [activeTab, setActiveTab] = useState<TabTypes>(
     TabTypes.PILL_DESCRIPTION

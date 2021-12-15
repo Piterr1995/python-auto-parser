@@ -48,6 +48,7 @@ export const GlobalStyle = createGlobalStyle`
       color: var(--black300);
       margin: 0;
       padding: 0;
+      background-color: #fafafa;
 
       @media screen and ${theme.breakpoints.bigTablet}{
         font-size: var(--s)

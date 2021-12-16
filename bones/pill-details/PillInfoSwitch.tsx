@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { HTMLAttributes, useState } from "react";
 
 import { useTranslation } from "react-i18next";
 import { Translations } from "enums";
@@ -54,8 +54,12 @@ enum TabTypes {
 type PillInfoSwitchProps = {
   pillDescription: string;
   authors: object[];
-};
-const BookInfoSwitch = ({ pillDescription, authors }: PillInfoSwitchProps) => {
+} & HTMLAttributes<HTMLDivElement>;
+const BookInfoSwitch = ({
+  pillDescription,
+  authors,
+  ...rest
+}: PillInfoSwitchProps) => {
   const { t } = useTranslation(Translations.MAIN);
   const [activeTab, setActiveTab] = useState<TabTypes>(
     TabTypes.PILL_DESCRIPTION
@@ -80,7 +84,7 @@ const BookInfoSwitch = ({ pillDescription, authors }: PillInfoSwitchProps) => {
     setActiveTab(tabType);
   };
   return (
-    <div>
+    <div {...rest}>
       <Switch
         activeItemValue={activeTab}
         handleClick={handleSetActiveTab}

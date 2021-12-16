@@ -14,6 +14,7 @@ import ChaptersModal from "bones/pill-details/content/ChaptersModal";
 import ProgressBar from "bones/pill-details/content/ProgressBar";
 import TutorialModal from "bones/pill-details/content/TutorialModal";
 import { Translations } from "enums";
+import { theme } from "style/theme";
 
 type CommonProps = {
   isDarkTheme: boolean;
@@ -36,12 +37,17 @@ const ChapterAndTitleWrapper = styled.span<CommonProps>`
 
 const Container = styled.div<Pick<CommonProps, "isDarkTheme">>`
   position: relative;
-  * {
+  p,
+  h1,
+  h2,
+  ul,
+  li,
+  button {
     font-family: "Arial", sans-serif;
     color: ${({ isDarkTheme, theme }) =>
       isDarkTheme ? "white" : "var(--black100)"};
     background: ${({ isDarkTheme, theme }) =>
-      isDarkTheme ? "var(--bootstrapDark)" : "white"};
+      isDarkTheme ? "var(--bootstrapDark)" : "inherit"};
   }
 `;
 
@@ -64,6 +70,11 @@ const ContentContainer = styled.div<Pick<CommonProps, "fontSize">>`
     p {
       margin: 0;
     }
+  }
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    width: 900px;
+    margin: auto;
   }
 `;
 

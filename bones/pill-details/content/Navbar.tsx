@@ -7,6 +7,7 @@ import { AiOutlineHome } from "react-icons/ai";
 
 import { useAppContext } from "hooks/useAppContext";
 import { Breakpoints, Routes } from "enums";
+import { theme } from "style/theme";
 
 type NavbarProps = {
   isVisible: boolean;
@@ -16,11 +17,11 @@ type NavbarProps = {
   handleToggleIsDarkTheme: () => void;
 };
 
-type MobileNavbarStyledComponentProps = {
+type StyledNavbarStyledComponentProps = {
   isVisible: boolean;
   isDarkTheme: boolean;
 };
-const MobileNavbar = styled.nav<MobileNavbarStyledComponentProps>`
+const StyledNavbar = styled.nav<StyledNavbarStyledComponentProps>`
   z-index: 1;
   width: 100vw;
   background: ${({ isDarkTheme, theme }) =>
@@ -31,14 +32,43 @@ const MobileNavbar = styled.nav<MobileNavbarStyledComponentProps>`
   position: sticky;
   top: 0;
   display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
-  /* justify-content: center; */
   align-items: center;
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    --text-content-width: 900px;
+    --navbar-width: 5.5rem;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    height: 30rem;
+    width: var(--navbar-width);
+    left: calc(
+      50% - calc(var(--text-content-width) / 2) - calc(var(--navbar-width) / 2) -
+        5rem
+    );
+    top: 50%;
+    transform: translate(-60%, -60%);
+
+    svg {
+      transform: scale(1.1, 1.1);
+    }
+  }
 `;
 
 const NavbarItem = styled.div`
   text-align: center;
   display: inline-block;
   width: 25%;
+  color: var(--black100);
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    width: 100%;
+    &:hover {
+      cursor: pointer;
+      color: var(--green100);
+    }
+  }
 `;
 
 const Navbar = ({
@@ -50,13 +80,7 @@ const Navbar = ({
 }: NavbarProps) => {
   const { state } = useAppContext();
 
-  const mobileNavbarItems = [
-    // {
-    //   handleClick: () => {
-    //     window.location.href = Routes.LIBRARY;
-    //   },
-    //   icon: <IoLibrarySharp size={50} />,
-    // },
+  const navbarItems = [
     {
       handleClick: () => {
         window.location.href = Routes.HOME;
@@ -80,19 +104,13 @@ const Navbar = ({
     },
   ];
   return (
-    <>
-      {state.windowWidth < Breakpoints.BIG_TABLET ? (
-        <MobileNavbar isDarkTheme={isDarkTheme} isVisible={isVisible}>
-          {mobileNavbarItems.map((item, index) => (
-            <NavbarItem onClick={item.handleClick} key={index}>
-              {item.icon}
-            </NavbarItem>
-          ))}
-        </MobileNavbar>
-      ) : (
-        <></>
-      )}
-    </>
+    <StyledNavbar isDarkTheme={isDarkTheme} isVisible={isVisible}>
+      {navbarItems.map((item, index) => (
+        <NavbarItem onClick={item.handleClick} key={index}>
+          {item.icon}
+        </NavbarItem>
+      ))}
+    </StyledNavbar>
   );
 };
 

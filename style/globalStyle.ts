@@ -111,9 +111,6 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
     }
-    icon, svg {
-      color: var(--green100);
-    }
     
     input:not([type=checkbox]), textarea {
       border-radius: 5px;

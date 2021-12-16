@@ -98,27 +98,26 @@ const HeroSection = styled.div`
     }
   }
   .hero-data {
-    /* position: absolute; */
     padding-top: calc(var(--gradientContainerHeight) - 125px);
     display: grid;
     grid-gap: 3rem;
 
     @media screen and ${theme.breakpoints.bigTablet} {
       grid-template-columns: repeat(2, 1fr);
-      padding-top: calc(var(--gradientContainerHeight) - 25rem);
+      padding-top: calc(var(--gradientContainerHeight) - 30rem);
     }
     .text {
       display: grid;
       grid-gap: 3rem;
 
       @media screen and ${theme.breakpoints.bigTablet} {
-        grid-gap: 4rem;
+        grid-gap: 5rem;
       }
 
       h1 {
         line-height: 6rem;
         @media screen and ${theme.breakpoints.bigTablet} {
-          font-size: 10rem;
+          font-size: 11rem;
           line-height: 10rem;
         }
       }
@@ -129,7 +128,7 @@ const HeroSection = styled.div`
         line-height: 3rem;
         @media screen and ${theme.breakpoints.bigTablet} {
           width: 80%;
-          font-size: 2rem;
+          font-size: 2.4rem;
           line-height: 4rem;
         }
       }
@@ -162,7 +161,6 @@ const HeroSection = styled.div`
         animation: ${slideUp(20, 0)} 1s ease forwards;
 
         @media screen and ${theme.breakpoints.bigTablet} {
-          width: 90%;
           animation: ${slideUp(20, -10)} 1s ease forwards;
         }
       }

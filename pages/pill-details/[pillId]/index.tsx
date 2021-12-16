@@ -28,6 +28,10 @@ const CardWrapper = styled.div`
     background: white;
     border-radius: 2rem;
     padding: 1.5rem;
+
+    .pill-info-switch {
+      margin-top: 5rem;
+    }
   }
 `;
 const StyledButton = styled(Button)`
@@ -36,6 +40,9 @@ const StyledButton = styled(Button)`
 
   @media screen and ${theme.breakpoints.bigTablet} {
     font-size: var(--m);
+    &:first-of-type {
+      margin-right: 1rem;
+    }
   }
 `;
 const Card = styled.div`
@@ -176,12 +183,6 @@ const CardData = styled.div`
     h2 {
       margin: 0;
     }
-
-    /* h2,
-    p {
-      margin: 0 !important;
-      padding: 0;
-    } */
   }
 `;
 
@@ -253,6 +254,7 @@ const PillDetails = ({ pill, pillAuthors }: any) => {
         <PillInfoSwitch
           pillDescription={"<p>Hello</p>"}
           authors={pillAuthors}
+          className="pill-info-switch"
         />{" "}
       </CardWrapper>
     </Container>

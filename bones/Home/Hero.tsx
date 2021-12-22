@@ -51,21 +51,18 @@ const Navbar = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  .book-pill-logo-text {
-    @media screen and ${theme.breakpoints.bigTablet} {
-      font-size: var(--xl);
-    }
-  }
   button {
     font-weight: 600;
     color: white;
     border: 2px solid white;
-    @media screen and ${theme.breakpoints.bigTablet} {
-      font-size: var(--s);
-      border: 4px solid white;
+  }
+  @media screen and ${theme.breakpoints.bigTablet} {
+    .book-pill-logo-text {
+      font-size: var(--l);
     }
   }
 `;
+
 const HeroSection = styled.div`
   --gradientContainerHeight: calc(37vh + 10vw - var(--navbar-height));
 
@@ -102,35 +99,18 @@ const HeroSection = styled.div`
     display: grid;
     grid-gap: 3rem;
 
-    @media screen and ${theme.breakpoints.bigTablet} {
-      grid-template-columns: repeat(2, 1fr);
-      padding-top: calc(var(--gradientContainerHeight) - 30rem);
-    }
     .text {
       display: grid;
       grid-gap: 3rem;
 
-      @media screen and ${theme.breakpoints.bigTablet} {
-        grid-gap: 5rem;
-      }
-
       h1 {
         line-height: 6rem;
-        @media screen and ${theme.breakpoints.bigTablet} {
-          font-size: 11rem;
-          line-height: 10rem;
-        }
       }
 
       p {
         font-size: var(--s);
         color: #505050;
         line-height: 3rem;
-        @media screen and ${theme.breakpoints.bigTablet} {
-          width: 80%;
-          font-size: 2.4rem;
-          line-height: 4rem;
-        }
       }
 
       b {
@@ -141,10 +121,6 @@ const HeroSection = styled.div`
         border: 3px solid var(--black300);
         font-size: var(--s);
         font-weight: 700;
-
-        @media screen and ${theme.breakpoints.bigTablet} {
-          font-size: 2rem;
-        }
       }
     }
 
@@ -159,21 +135,76 @@ const HeroSection = styled.div`
         width: 100%;
         margin: auto;
         animation: ${slideUp(20, 0)} 1s ease forwards;
+      }
+    }
+  }
 
-        @media screen and ${theme.breakpoints.bigTablet} {
-          animation: ${slideUp(20, -10)} 1s ease forwards;
+  @media screen and ${theme.breakpoints.bigTablet} {
+    .hero-data {
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: calc(var(--gradientContainerHeight) - 20rem);
+
+      .text {
+        grid-gap: 3rem;
+
+        h1 {
+          font-size: 8rem;
+          line-height: 8rem;
+        }
+
+        p {
+          width: 80%;
+          font-size: var(--s);
+          line-height: 4rem;
+        }
+
+        button {
+          font-size: var(--s);
+        }
+      }
+
+      .image-container {
+        animation: ${slideUp(20, -10)} 1s ease forwards;
+        img {
+          width: 90%;
         }
       }
     }
+  }
 
-    /* @keyframes slideUp {
-      0% {
-        transform: translateY(20%);
+  @media screen and ${theme.breakpoints.desktop} {
+    .gradient-container {
+      height: calc(var(--gradientContainerHeight) - 1rem);
+    }
+    .hero-data {
+      padding-top: calc(var(--gradientContainerHeight) - 32rem);
+
+      .text {
+        grid-gap: 4rem;
+        h1 {
+          font-size: 12rem;
+          line-height: 12rem;
+        }
+
+        p {
+          font-size: 2rem;
+          line-height: 4rem;
+        }
+
+        button {
+          font-size: var(--m);
+        }
       }
-      100% {
-        transform: translateY(-10%);
+
+      .image-container {
+        img {
+          /* height: 167%; */
+          position: absolute;
+          width: 100%;
+          left: 10rem;
+        }
       }
-    } */
+    }
   }
 `;
 

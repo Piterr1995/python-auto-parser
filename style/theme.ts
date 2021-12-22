@@ -5,7 +5,7 @@ export const breakpoints = {
   tablet: 768,
   bigTablet: 992,
   laptop: 1200,
-  desktop: 1550,
+  desktop: 1366,
 };
 
 const { mini, mobile, tablet, bigTablet, laptop, desktop } = breakpoints;

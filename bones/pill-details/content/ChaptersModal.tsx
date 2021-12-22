@@ -10,10 +10,10 @@ const StyledH1 = styled.h1`
   margin-bottom: 6px;
 
   @media screen and ${theme.breakpoints.bigTablet} {
-    font-size: 3rem;
+    font-size: var(--l);
   }
 `;
-const ChapterList = styled.ul`
+const ChapterList = styled.ul<{ fontSize: number }>`
   list-style: none;
   padding: 10px;
   margin-top: 0;
@@ -24,7 +24,6 @@ const ChapterListItem = styled.li<{ active: boolean }>`
   font-weight: ${({ active }) => (active ? 600 : 400)};
   border-bottom: 1px solid lightgray;
   padding: 1rem 0;
-  font-size: var(--s)};
 
   &:hover {
     color: var(--green100);
@@ -37,11 +36,9 @@ const ChapterListItem = styled.li<{ active: boolean }>`
     border: none;
   }
 
-  @media screen and ${theme.breakpoints.bigTablet}{
-   font-size: var(--l);
-   padding: 2rem 0;
-
- 
+  @media screen and ${theme.breakpoints.bigTablet} {
+    font-size: 1.4rem;
+    padding: 1rem 0;
   }
 `;
 type Chapter = {

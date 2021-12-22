@@ -12,7 +12,7 @@ const WaveWrapper = styled.div<WaveProps>`
   line-height: 0;
   left: 0;
   .shape-fill {
-    fill: #ffffff;
+    fill: #fafafa;
   }
   svg {
     position: relative;

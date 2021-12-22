@@ -137,6 +137,10 @@ export const GlobalStyle = createGlobalStyle`
       padding: 0 2rem;
 
       @media screen and ${theme.breakpoints.bigTablet}{
+        width: 1000px;
+        margin: auto;
+      }
+      @media screen and ${theme.breakpoints.desktop}{
         width: 1200px;
         margin: auto;
       }

@@ -8,13 +8,14 @@ import parse from "html-react-parser";
 import Button from "components/atoms/Button";
 import { useAppContext } from "hooks/useAppContext";
 import { useToggle } from "hooks/useToggle";
-import { Breakpoints } from "enums";
 import Navbar from "bones/pill-details/content/Navbar";
 import ChaptersModal from "bones/pill-details/content/ChaptersModal";
 import ProgressBar from "bones/pill-details/content/ProgressBar";
 import TutorialModal from "bones/pill-details/content/TutorialModal";
 import { Translations } from "enums";
 import { theme } from "style/theme";
+
+const Background = "/images/dynamic-style.png";
 
 type CommonProps = {
   isDarkTheme: boolean;
@@ -28,14 +29,16 @@ const StyledH1 = styled.h1<Pick<CommonProps, "fontSize">>`
 const ChapterAndTitleWrapper = styled.span<CommonProps>`
   color: ${({ isDarkTheme, theme }) =>
     isDarkTheme ? "white" : "#777777"} !important;
-  /* color: #777777 !important; */
   font-weight: 400;
   font-style: italic;
   font-size: ${({ fontSize }) => fontSize * 0.75}rem;
-  /* line-height: 1rem !important; */
 `;
 
 const Container = styled.div<Pick<CommonProps, "isDarkTheme">>`
+  /* background: ${({ isDarkTheme }) =>
+    isDarkTheme ? "var(--bootstrapDark)" : "#f4f4f4"}; */
+  background: ${({ isDarkTheme }) =>
+    isDarkTheme ? "var(--bootstrapDark)" : `url(${Background})`};
   position: relative;
   p,
   h1,
@@ -68,12 +71,12 @@ const ContentContainer = styled.div<Pick<CommonProps, "fontSize">>`
       font-size: ${({ fontSize }) => fontSize * 1.05}rem;
     }
     p {
-      margin: 0;
+      margin: 2rem 0;
     }
   }
 
   @media screen and ${theme.breakpoints.bigTablet} {
-    width: 900px;
+    width: 700px;
     margin: auto;
   }
 `;
@@ -88,6 +91,10 @@ const NavigationButtonsWrapper = styled.div<CommonProps>`
     border: 1px solid
       ${({ isDarkTheme, theme }) =>
         isDarkTheme ? "white" : "var(--bootstrapDark)"};
+  }
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    margin-top: 4rem;
   }
 `;
 
@@ -109,6 +116,7 @@ const fontSizeOptions = [
 const preferredFontSizeLocalStorageKey = "zzpjwb";
 
 import { pills } from "data";
+import router from "next/router";
 
 const Content = ({ chapters, title }: { chapters: any; title: string }) => {
   const { t } = useTranslation(Translations.MAIN);
@@ -171,6 +179,9 @@ const Content = ({ chapters, title }: { chapters: any; title: string }) => {
     scrollToTop();
   };
 
+  const goHome = () => {
+    router.push("/");
+  };
   const checkIfThereIsPreviousChapter = () => {
     return currentChapterIndex > 0;
   };
@@ -257,7 +268,7 @@ const Content = ({ chapters, title }: { chapters: any; title: string }) => {
                 {t("pill_content_next_page")}
               </Button>
             ) : (
-              <span />
+              <Button onClick={goHome}>Zakończ</Button>
             )}
           </NavigationButtonsWrapper>
         </ContentContainer>

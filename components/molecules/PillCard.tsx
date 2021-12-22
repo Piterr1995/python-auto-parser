@@ -19,11 +19,11 @@ const Card = styled.div`
   .data {
     padding: 1rem;
 
-    h1.title {
+    .title {
       margin: 1rem 0 0.5rem;
     }
 
-    h2.authors {
+    .authors {
       margin: 0.5rem 0 1rem;
       color: var(--grey100);
     }
@@ -37,6 +37,7 @@ const Card = styled.div`
       span {
         margin-left: 0.5px;
         font-size: 1.4rem;
+        font-weight: 600;
       }
     }
   }

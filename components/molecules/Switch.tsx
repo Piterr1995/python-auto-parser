@@ -15,7 +15,13 @@ const SwitchWrapper = styled.div`
   }
 
   @media screen and ${theme.breakpoints.bigTablet} {
-    font-size: var(--m);
+    font-size: var(--s);
+
+    span {
+      &:hover {
+        color: black;
+      }
+    }
   }
 `;
 

@@ -15,7 +15,6 @@ const StyledCloseIcon = styled(AiOutlineClose)`
   cursor: pointer;
 
   @media screen and ${theme.breakpoints.bigTablet} {
-    transform: scale(1.6, 1.6);
     right: 2rem;
     top: 2rem;
 
@@ -26,17 +25,11 @@ const StyledCloseIcon = styled(AiOutlineClose)`
 `;
 
 const ModalContent = styled.div`
-  position: relative;
   width: 95%;
-  border-radius: 1.5rem;
-  inset: 0;
   margin: 5rem auto;
-  max-height: 90vh;
-  overflow: scroll;
 
   @media screen and ${theme.breakpoints.bigTablet} {
-    width: 800px;
-    max-height: 80vh;
+    width: 600px;
   }
 `;
 type ModalProps = {
@@ -59,6 +52,10 @@ const Modal = ({
       backgroundColor: "rgba(0, 0, 0, 0.5)",
       position: "fixed",
       ...style?.overlay,
+    },
+    content: {
+      borderRadius: 30,
+      inset: 0,
     },
   };
   useEffect(() => {

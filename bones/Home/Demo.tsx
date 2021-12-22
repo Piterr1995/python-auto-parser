@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useTranslation } from "react-i18next";
 import { BiFontSize } from "react-icons/bi";
 import { BsMoonStars, BsSun } from "react-icons/bs";
@@ -16,8 +16,7 @@ const IphoneImage = "/images/iPhone.jpg";
 const Container = styled.div`
   --image-width: 15rem;
   --image-height: 28rem;
-
-  padding: 2rem auto 0;
+  padding-top: 3rem;
   position: relative;
   text-align: center;
   width: 100%;
@@ -33,7 +32,7 @@ const Container = styled.div`
     --image-width: 20rem;
     --image-height: 40rem;
 
-    padding-bottom: 5rem;
+    padding: 5rem;
 
     .blob-container {
       --blob-container-width: 50rem;
@@ -91,22 +90,22 @@ const ContentContainer = styled.div`
     }
 
     .title {
-      grid-row: 1 / 3;
+      grid-row: 1 / 2;
       grid-column: 1;
-      font-size: 3.5rem;
+      font-size: var(--xl);
     }
 
     .description {
-      grid-row: 5 / 11;
+      grid-row: 4 / 7;
       grid-column: 1;
-      font-size: 2.6rem;
+      font-size: 2rem;
       font-weight: 400;
     }
 
     .line {
-      border: 5px solid var(--green100);
+      border: 4px solid var(--green100);
       grid-column: 1;
-      grid-row: 14;
+      grid-row: 13;
       width: 100%;
       animation: 10s ${widthAnimation} ease-in-out infinite;
     }
@@ -133,17 +132,15 @@ type PhoneImageContentProps = {
   isDarkTheme: boolean;
 };
 const PhoneImageContent = styled.div<PhoneImageContentProps>`
-  color: ${({ isDarkTheme, theme }) =>
-    isDarkTheme ? "white" : "var(--black300)"};
+  color: ${({ isDarkTheme }) => (isDarkTheme ? "white" : "var(--black300)")};
 
-  background: ${({ isDarkTheme, theme }) =>
+  background: ${({ isDarkTheme }) =>
     isDarkTheme ? "var(--bootstrapDark)" : "white"};
   text-align: left;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem 0.5rem;
-  /* height: 26.4rem; */
   height: calc(var(--image-height) - 1.6rem);
   width: calc(var(--image-width) - 2rem);
   border-radius: 1rem;
@@ -166,7 +163,7 @@ const PhoneImageContent = styled.div<PhoneImageContentProps>`
     border-radius: 2rem;
     p,
     b {
-      font-size: var(--s);
+      font-size: ${({ fontSize }) => fontSize + "rem"};
     }
   }
 `;
@@ -229,6 +226,7 @@ const Demo = () => {
       currentFontSizeIndex < fontSizeOptions.length - 1
         ? fontSizeOptions[currentFontSizeIndex + 1]
         : fontSizeOptions[0];
+
     setPresentationFontSize(nextFontSize);
   };
   return (
@@ -237,7 +235,6 @@ const Demo = () => {
         <Blob transition={3000} />
       </div>
 
-      <Wave reverse />
       <ContentContainer className="container">
         <h2 className="title">{t("home_demo_presentation_title")}</h2>
         <ImageContainer>

@@ -19,6 +19,7 @@ const Container = styled.div`
       position: absolute;
       width: var(--blob-container-width);
       display: block;
+      z-index: -1;
       &:nth-child(1) {
         top: 65%;
         left: var(--blob-position);
@@ -37,6 +38,10 @@ const ContentContainer = styled.div`
 `;
 const H1 = styled.h1`
   font-size: var(--xl);
+
+  /* @media screen and ${theme.breakpoints.bigTablet} {
+    font-size: 3.5rem;
+  } */
 `;
 
 const PillCardsContainer = styled.div`

@@ -14,7 +14,8 @@ const Content = styled.div`
 
   @media screen and ${theme.breakpoints.bigTablet} {
     * {
-      font-size: var(--s);
+      line-height: 3.2rem;
+      font-size: 1.4rem;
     }
   }
 `;
@@ -29,12 +30,6 @@ const AuthorsInfoWrapper = styled.div`
     color: var(--grey200);
     margin: 0.5rem 0;
   }
-
-  /* @media screen and ${theme.breakpoints.bigTablet} {
-    .author {
-      font-size: var(--s);
-    }
-  } */
 `;
 const AuthorsInfo = ({ authors }: any) => (
   <AuthorsInfoWrapper>

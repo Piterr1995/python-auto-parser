@@ -12,6 +12,8 @@ import { pills, authors } from "data";
 import { theme } from "style/theme";
 const BubbleBackground = "/images/bubble-background.png";
 
+const CardBackground = "/images/dynamic-style.png";
+
 import Spacer from "components/atoms/Spacer";
 
 const Container = styled.div`
@@ -22,15 +24,19 @@ const Container = styled.div`
   }
 `;
 const CardWrapper = styled.div`
+  .pill-info-switch {
+    width: 100%;
+  }
   @media screen and ${theme.breakpoints.bigTablet} {
-    max-width: 1050px;
+    max-width: 1000px;
     margin: auto;
-    background: white;
+    /* background: white; */
+    background: url(${CardBackground});
     border-radius: 2rem;
     padding: 1.5rem;
 
     .pill-info-switch {
-      margin-top: 5rem;
+      margin-top: 3rem;
     }
   }
 `;
@@ -39,16 +45,14 @@ const StyledButton = styled(Button)`
   cursor: pointer;
 
   @media screen and ${theme.breakpoints.bigTablet} {
-    font-size: var(--m);
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
     &:first-of-type {
       margin-right: 1rem;
     }
   }
 `;
 const Card = styled.div`
-  /* padding: 1.5rem; */
-  /* border-radius: 1.5rem; */
-
   @media screen and ${theme.breakpoints.bigTablet} {
     display: grid;
     height: 300px;
@@ -76,10 +80,13 @@ const ImageWrapper = styled.div`
 const CardData = styled.div`
   --small-padding: 1.5rem;
 
+  padding: var(--small-padding);
+
   .titleContainer {
     .backgroundTitle {
       display: none;
     }
+
     @media screen and ${theme.breakpoints.bigTablet} {
       margin-left: calc(-1 * var(--small-padding));
       border-radius: 1rem;
@@ -89,7 +96,7 @@ const CardData = styled.div`
       align-items: center;
       position: relative;
       overflow: hidden;
-      grid-row: 1 / 5;
+      grid-row: 1 / 4;
 
       .backgroundTitle {
         width: 200%;
@@ -102,23 +109,22 @@ const CardData = styled.div`
         align-items: center;
       }
       .title {
-        font-size: var(--xl);
+        font-size: 2rem;
         width: 100%;
         color: white;
       }
     }
   }
+
   .authors {
     color: var(--grey100);
 
     @media screen and ${theme.breakpoints.bigTablet} {
-      grid-row: 5 / 7;
+      grid-row: 4 / 6;
       margin-top: 1.2rem;
-      font-size: var(--l);
+      font-size: var(--m);
     }
   }
-
-  padding: 1rem 0;
 
   h1 {
     margin: 1rem 0 0.5rem;
@@ -143,11 +149,11 @@ const CardData = styled.div`
     }
 
     @media screen and ${theme.breakpoints.bigTablet} {
-      grid-row: 7 / 9;
+      grid-row: 6 / 8;
       .fullTitle,
       .categories {
-        margin: 0.5rem 0;
-        font-size: 1.7rem;
+        margin: 0.7rem 0;
+        font-size: 1.4rem;
       }
     }
   }
@@ -164,11 +170,16 @@ const CardData = styled.div`
       font-size: 1.4rem;
     }
     @media screen and ${theme.breakpoints.bigTablet} {
-      grid-row: 10 / 11;
-      margin-top: 0.5rem;
+      grid-row: 8 / 9;
+      margin-top: 2.5rem;
 
       span {
-        font-size: var(--s);
+        font-size: 1.4rem;
+      }
+
+      svg {
+        transform: scale(1.1, 1.1);
+        margin-right: 0.7rem;
       }
     }
   }
@@ -190,7 +201,7 @@ const ButtonsContainer = styled.div`
   margin-top: 1.5rem;
 
   @media screen and ${theme.breakpoints.bigTablet} {
-    grid-row: 11 / -1;
+    grid-row: 10 / 12;
   }
 `;
 
@@ -223,6 +234,7 @@ const PillDetails = ({ pill, pillAuthors }: any) => {
             </div>
             <h2 className="authors">{authorsString}</h2>
             <div className="timeSectionContainer">
+              {/* <span>Czas czytania: {timeToRead} min.</span> */}
               <AiOutlineClockCircle size={20} /> <span>{timeToRead} min.</span>
             </div>
             <ButtonsContainer>
@@ -254,8 +266,9 @@ const PillDetails = ({ pill, pillAuthors }: any) => {
         <PillInfoSwitch
           pillDescription={"<p>Hello</p>"}
           authors={pillAuthors}
-          className="pill-info-switch"
+          className="pill-info-switch container"
         />{" "}
+        <Spacer y={20} />
       </CardWrapper>
     </Container>
   );

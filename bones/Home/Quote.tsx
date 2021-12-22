@@ -16,7 +16,7 @@ const QuoteWrapper = styled.div`
   border-top: 1px solid lightgray;
 
   @media screen and ${theme.breakpoints.bigTablet} {
-    font-size: var(--m);
+    font-size: var(--s);
   }
 `;
 

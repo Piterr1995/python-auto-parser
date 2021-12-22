@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { theme } from "style/theme";
 
 type ButtonProps = {
   secondary?: boolean;
@@ -17,8 +18,7 @@ const Button = styled.button<ButtonProps>`
   background-color: var(--green100);
 
   &:hover {
-    @media screen and (min-width: ${({ theme }) =>
-        theme.breakpoints.bigTablet}) {
+    @media screen and ${theme.breakpoints.bigTablet} {
       transition: transform 0.3s ease-out;
       cursor: pointer;
       transform: scale(1.05);

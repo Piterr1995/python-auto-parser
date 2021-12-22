@@ -24,8 +24,10 @@ type StyledNavbarStyledComponentProps = {
 const StyledNavbar = styled.nav<StyledNavbarStyledComponentProps>`
   z-index: 1;
   width: 100vw;
-  background: ${({ isDarkTheme, theme }) =>
-    isDarkTheme ? "var(--bootstrapDark)" : "white"};
+  /* background: ${({ isDarkTheme }) =>
+    isDarkTheme ? "var(--bootstrapDark)" : "#f4f4f4"}; */
+  background: ${({ isDarkTheme }) =>
+    isDarkTheme ? "var(--bootstrapDark)" : "inherit"};
   color: ${({ isDarkTheme }) => (isDarkTheme ? "white" : "inherit")};
   height: 80px;
   padding: 15px 10px;
@@ -35,24 +37,22 @@ const StyledNavbar = styled.nav<StyledNavbarStyledComponentProps>`
   align-items: center;
 
   @media screen and ${theme.breakpoints.bigTablet} {
-    --text-content-width: 900px;
+    --text-content-width: 700px;
     --navbar-width: 5.5rem;
     position: fixed;
     flex-direction: column;
     justify-content: space-between;
+    color: ${({ isDarkTheme }) => (isDarkTheme ? "white" : "inherit")};
+
     padding: 0;
     height: 30rem;
     width: var(--navbar-width);
     left: calc(
-      50% - calc(var(--text-content-width) / 2) - calc(var(--navbar-width) / 2) -
-        5rem
+      50% - calc(var(--text-content-width) / 2) -
+        calc(var(--navbar-width) / 2 + 2rem)
     );
     top: 50%;
     transform: translate(-60%, -60%);
-
-    svg {
-      transform: scale(1.1, 1.1);
-    }
   }
 `;
 
@@ -60,7 +60,6 @@ const NavbarItem = styled.div`
   text-align: center;
   display: inline-block;
   width: 25%;
-  color: var(--black100);
 
   @media screen and ${theme.breakpoints.bigTablet} {
     width: 100%;

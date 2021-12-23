@@ -112,7 +112,6 @@ const ProsContainer = styled.div`
       grid-gap: 1rem;
 
       .pros {
-        grid-template-rows: 4rem 4rem 11rem;
         line-height: 3rem;
 
         svg {

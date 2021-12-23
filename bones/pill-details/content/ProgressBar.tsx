@@ -5,24 +5,24 @@ type ProgressBarProps = {
   isVisible: boolean;
   isDarkTheme: boolean;
 };
-const ProgressBarContainer = styled.div<{ isVisible: boolean }>`
+const ProgressBarContainer = styled.div<Pick<ProgressBarProps, "isVisible">>`
   display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
   position: sticky;
   bottom: 0;
-  height: 50px;
-
   align-items: center;
   justify-content: center;
   height: 35px;
 `;
 
-const FullProgressWrapper = styled.div<{ isDarkTheme: boolean }>`
+const FullProgressWrapper = styled.div<
+  Pick<ProgressBarFillProps, "isDarkTheme">
+>`
   width: 90%;
   border-radius: 5px;
-  background-color: ${({ isDarkTheme, theme }) =>
+  background-color: ${({ isDarkTheme }) =>
     isDarkTheme ? "var(--bootstrapDark)" : "white"};
   border: 1px solid
-    ${({ isDarkTheme, theme }) => (isDarkTheme ? "white" : "var(--black100)")};
+    ${({ isDarkTheme }) => (isDarkTheme ? "white" : "var(--black100)")};
   height: 10px;
 `;
 
@@ -30,7 +30,8 @@ type ProgressBarFillProps = Pick<ProgressBarProps, "progress" | "isDarkTheme">;
 const ProgressBarFill = styled.div<ProgressBarFillProps>`
   width: ${({ progress }) => progress}%;
   height: 100%;
-  background-color: ${({ isDarkTheme, theme }) =>
+  transition: width 0.3s ease;
+  background-color: ${({ isDarkTheme }) =>
     isDarkTheme ? "white" : "var(--bootstrapDark)"} !important;
 `;
 

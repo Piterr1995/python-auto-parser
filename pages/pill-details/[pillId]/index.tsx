@@ -264,7 +264,7 @@ const PillDetails = ({ pill, pillAuthors }: any) => {
           </CardData>
         </Card>
         <PillInfoSwitch
-          pillDescription={"<p>Hello</p>"}
+          pillDescription={pill.description}
           authors={pillAuthors}
           className="pill-info-switch container"
         />{" "}

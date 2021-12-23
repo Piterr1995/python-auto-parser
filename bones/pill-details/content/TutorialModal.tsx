@@ -30,13 +30,13 @@ const IconsTd = styled.td`
 const TutorialModal = () => {
   const { t } = useTranslation(Translations.MAIN);
   const [isTutorialFinished, toggleIsTutorialFinished] = useToggle(true);
-  const [isModalVisible, toggleIsModalVisible] = useToggle(!isTutorialFinished);
 
   useEffect(() => {
     if (!localStorage.getItem(tutorialLocalStorageKey)) {
-      toggleIsTutorialFinished;
+      toggleIsTutorialFinished();
     }
   }, [toggleIsTutorialFinished]);
+
   const tutorialItems = [
     {
       icon: FaRegHandPointer,
@@ -62,11 +62,11 @@ const TutorialModal = () => {
 
   const handleToggleModalAndAddFinishInfoToLocalStorage = () => {
     localStorage.setItem(tutorialLocalStorageKey, "1");
-    toggleIsModalVisible();
+    toggleIsTutorialFinished();
   };
   return (
     <Modal
-      isVisible={isModalVisible}
+      isVisible={!isTutorialFinished}
       onRequestClose={handleToggleModalAndAddFinishInfoToLocalStorage}
     >
       <h1 className="text-center">{t("pill_content_tutorial_title")}</h1>

@@ -25,112 +25,96 @@ const Container = styled.div`
     color: white;
   }
 
-  .blob-container {
-    display: none;
-  }
   @media screen and ${theme.breakpoints.bigTablet} {
     --image-width: 20rem;
     --image-height: 40rem;
-
     padding: 5rem;
+  }
+`;
+
+const TextAndBlobContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-right: 3px dotted lightgray;
+
+  .title {
+    color: white;
+  }
+  .description-large-screen {
+    display: none;
+  }
+
+  .blob-container {
+    display: none;
+  }
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    text-align: left;
+
+    .title {
+      color: var(--black300);
+      margin: 0;
+      font-size: var(--xl);
+      margin-top: 0.5rem;
+    }
+
+    .description-large-screen {
+      display: block;
+      margin: 0;
+    }
 
     .blob-container {
-      --blob-container-width: 50rem;
-      position: absolute;
-
       display: block;
-      width: var(--blob-container-width);
-      justify-content: space-around;
-      z-index: 1;
-      svg {
-        width: 100%;
-      }
-
-      top: 30%;
-      right: calc(-1 * var(--blob-container-width) / 1.5);
+      width: 16rem;
+      margin: auto;
     }
   }
 `;
 
-const widthAnimation = keyframes`
-  0% {
-    width: 0%;
-  }
-  10% {
-    width: 99%;
-  }
-  100% {
-    width: 100%;
-  }
-`;
 const ContentContainer = styled.div`
-  .description,
-  .title {
+  .description-small-screen {
     color: white;
+    font-weight: 600;
   }
-  .description {
-    font-weight: bold;
-  }
-
   @media screen and ${theme.breakpoints.bigTablet} {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(20, 2rem);
-
-    .description,
-    .title {
-      color: var(--black300) !important;
-      text-align: left;
-    }
 
     svg {
       color: var(--green100);
       transform: scale(1.2, 1.2);
     }
 
-    .title {
-      grid-row: 1 / 2;
-      grid-column: 1;
-      font-size: var(--xl);
-    }
-
-    .description {
-      grid-row: 4 / 7;
-      grid-column: 1;
-      font-size: 2rem;
-      font-weight: 400;
-    }
-
-    .line {
-      border: 4px solid var(--green100);
-      grid-column: 1;
-      grid-row: 13;
-      width: 100%;
-      animation: 10s ${widthAnimation} ease-in-out infinite;
+    .description-small-screen {
+      display: none;
     }
   }
 `;
+
+// IMAGE SECTION
 
 const ImageContainer = styled.div`
   position: relative;
 `;
 const ImageWrapper = styled.div`
   position: relative;
-  width: var(--image-width);
   margin: auto;
+  width: var(--image-width);
   height: var(--image-height);
 
-  /* @media screen and ${theme.breakpoints.bigTablet} {
+  @media screen and ${theme.breakpoints.bigTablet} {
     height: 40rem;
-    width: 23rem;
-  } */
+    width: 20rem;
+  }
 `;
 
 type PhoneImageContentProps = {
   fontSize: number;
   isDarkTheme: boolean;
 };
+
 const PhoneImageContent = styled.div<PhoneImageContentProps>`
   color: ${({ isDarkTheme }) => (isDarkTheme ? "white" : "var(--black300)")};
 
@@ -145,10 +129,6 @@ const PhoneImageContent = styled.div<PhoneImageContentProps>`
   width: calc(var(--image-width) - 2rem);
   border-radius: 1rem;
   overflow: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  scrollbar-width: none;
   cursor: pointer;
   left: 0;
   right: 0;
@@ -158,15 +138,15 @@ const PhoneImageContent = styled.div<PhoneImageContentProps>`
     margin: 0 0 0.5rem;
     font-size: ${({ fontSize }) => fontSize + "rem"};
   }
-
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   @media screen and ${theme.breakpoints.bigTablet} {
-    border-radius: 2rem;
-    p,
-    b {
-      font-size: ${({ fontSize }) => fontSize + "rem"};
-    }
+    border-radius: 2.2rem;
   }
 `;
+
 const Img = styled.img`
   width: 100%;
   height: 100%;
@@ -231,12 +211,16 @@ const Demo = () => {
   };
   return (
     <Container className="gradient gradient-hide-big-tablet">
-      <div className="blob-container">
-        <Blob transition={3000} />
-      </div>
-
       <ContentContainer className="container">
-        <h2 className="title">{t("home_demo_presentation_title")}</h2>
+        <TextAndBlobContainer>
+          <h2 className="title">{t("home_demo_presentation_title")}</h2>
+          <p className="description-large-screen">
+            {t("home_demo_presentation_description")}
+          </p>
+          <div className="blob-container">
+            <Blob transition={3000} />
+          </div>
+        </TextAndBlobContainer>
         <ImageContainer>
           <ImageWrapper>
             <Img src={IphoneImage} />
@@ -264,8 +248,9 @@ const Demo = () => {
             onClick={handleFontSizeChange}
           />
         </ImageContainer>
-        <p className="description">{t("home_demo_presentation_description")}</p>
-        <hr className="line" />
+        <p className="description-small-screen">
+          {t("home_demo_presentation_description")}
+        </p>
       </ContentContainer>
       <Spacer y={8} />
     </Container>

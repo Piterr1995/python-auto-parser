@@ -5,8 +5,6 @@ import ReactModal from "react-modal";
 import { AiOutlineClose } from "react-icons/ai";
 import { theme } from "style/theme";
 
-// keyof typeof ModalTypes
-
 const StyledCloseIcon = styled(AiOutlineClose)`
   position: absolute;
   right: 15px;
@@ -25,6 +23,7 @@ const StyledCloseIcon = styled(AiOutlineClose)`
 `;
 
 const ModalContent = styled.div`
+  position: relative;
   width: 95%;
   margin: 5rem auto;
 

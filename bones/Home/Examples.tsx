@@ -20,12 +20,12 @@ const Container = styled.div`
       width: var(--blob-container-width);
       display: block;
       z-index: -1;
-      &:nth-child(1) {
+      /* &:nth-child(1) {
         top: 65%;
         left: var(--blob-position);
-      }
-      &:nth-child(2) {
-        top: 15%;
+      } */
+      &:nth-child(1) {
+        top: 25%;
         right: var(--blob-position);
       }
     }
@@ -75,9 +75,6 @@ const Examples = () => {
   return (
     <Container>
       <div className="blob-container first">
-        <Blob transition={3000} />
-      </div>
-      <div className="blob-container 2">
         <Blob transition={3000} />
       </div>
       <ContentContainer className="container" id="examples">

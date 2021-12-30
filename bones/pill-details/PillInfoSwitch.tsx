@@ -9,7 +9,8 @@ import { theme } from "style/theme";
 
 const Content = styled.div`
   * {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 2.4rem;
   }
 
   @media screen and ${theme.breakpoints.bigTablet} {

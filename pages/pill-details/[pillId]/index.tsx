@@ -258,7 +258,7 @@ const PillDetails = ({ pill, pillAuthors }: any) => {
                 {t("pill_details_full_title")}: {title}
               </p>
               <p className="categories">
-                {t("pill_details_categories")}: filozofia, finanse
+                {t("pill_details_categories")}: {pill.categories.join(", ")}
               </p>
             </div>
           </CardData>

@@ -65,7 +65,8 @@ export const pills = [
     cover: ThinkAndGrowRichCover,
     title: "Myśl i bogać się",
     authors: [1],
-    timeToRead: 10,
+    categories: ["finanse", "rozwój osobisty"],
+    timeToRead: 23,
     purchaseLink:
       "https://onepress.pl/ksiazki/mysl-i-bogac-sie-wersja-oryginalna-odswiezona-i-zaktualizowana-napoleon-hill-ross-cornwell-editor,mysbog.htm#format/d",
     description:
@@ -148,8 +149,8 @@ export const pills = [
     cover: TheProphetCover,
     title: "Prorok",
     authors: [2],
-
-    timeToRead: 10,
+    categories: ["związki", "rozwój osobisty", "duchowość"],
+    timeToRead: 22,
     purchaseLink: "https://wydsal.pl/literatura/236-prorok.html",
     description:
       "<p><strong>The Prophet</strong> <strong>(Prorok)</strong> składa się z poetyckich esejów dotyczących ludzkich doświadczeń i ich duchowego znaczenia. Książka jest pewnego rodzaju opisem rzeczywistości i medytacją nad sensem życia. Została przetłumaczona na ponad sto języków i sprzedana dziesiątkach milionów egzemplarzy.</p>",
@@ -249,7 +250,8 @@ export const pills = [
     cover: TheScienceOfGettingRichCover,
     title: "Sztuka wzbogacania się",
     authors: [3],
-    timeToRead: 10,
+    timeToRead: 23,
+    categories: ["finanse", "rozwój osobisty", "psychologia"],
     purchaseLink:
       "https://www.zlotemysli.pl/prod/6370/sztuka-wzbogacania-sie-wallace-d-wattles.html",
     description: `<p>
@@ -681,7 +683,8 @@ export const pills = [
     cover: TheArtOfMoneyGettingCover,
     title: "Sztuka zdobywania pieniędzy",
     authors: [5],
-    timeToRead: 10,
+    timeToRead: 15,
+    categories: ["finanse", "rozwój osobisty"],
     purchaseLink:
       "https://www.zlotemysli.pl/prod/13713/wydanie-ii-sztuka-zdobywania-pieniedzy-p-t-barnum.html",
     description:
@@ -722,7 +725,8 @@ export const pills = [
     cover: MeditationsCover,
     title: "Rozmyślania",
     authors: [6],
-    timeToRead: 10,
+    timeToRead: 19,
+    categories: ["rozwój osobisty", "filozofia", "duchowość"],
     purchaseLink:
       "https://www.taniaksiazka.pl/rozmyslania-marek-aureliusz-p-744408.html?utm_source=google&utm_medium=cpc&utm_campaign=shopping",
     description:
@@ -787,7 +791,8 @@ export const pills = [
     cover: TheMajestyOfCalmnessCover,
     title: "Majestat Spokoju",
     authors: [7],
-    timeToRead: 10,
+    timeToRead: 18,
+    categories: ["rozwój osobisty"],
     purchaseLink: "https://www.enbook.pl/catalog/product/view/id/4944487",
     description: `<p>Opis książki:</p><ul><li>The Majesty of Calmness to ponadczasowa książka motywacyjna autorstwa William&rsquo;a George&rsquo;a Jordan&rsquo;a, która poprowadzi Cię do osiągnięcia spokoju w Twoim życiu.&nbsp;</li></ul><p>W Pillach zostały zawarte informacje na temat następujących zagadnień:</p><ul><li>spokój jako wartość;</li><li>niszczycielska rola pośpiechu;</li><li>rozmiar wpływu człowieka na otaczającą rzeczywistość;</li><li>znaczenie samodzielności w osiąganiu sukcesu;</li><li>porażka a sukces;</li><li>szczęście jako pojęcie niejednoznaczne.</li></ul>`,
     chapters: [

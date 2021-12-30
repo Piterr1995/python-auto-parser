@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import Button from "components/atoms/Button";
 import parse from "html-react-parser";
 import { theme, breakpoints } from "style/theme";
+import { useRouter } from "next/router";
 const PhonesImage = "/images/phones.png";
 
 const gradientAnimation = keyframes`
@@ -42,11 +43,7 @@ const Navbar = styled.nav`
   font-size: 2.2rem;
   padding: var(--normalPadding);
   font-weight: 700;
-  /* position: absolute; */
-  top: 0;
-  /* height: 7rem; */
   height: var(--navbar-height);
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,6 +56,7 @@ const Navbar = styled.nav`
   @media screen and ${theme.breakpoints.bigTablet} {
     .book-pill-logo-text {
       font-size: var(--l);
+      cursor: pointer;
     }
   }
 `;
@@ -182,7 +180,7 @@ const HeroSection = styled.div`
       .text {
         grid-gap: 4rem;
         h1 {
-          font-size: 12rem;
+          font-size: 10rem;
           line-height: 12rem;
         }
 
@@ -210,16 +208,23 @@ const HeroSection = styled.div`
 
 const Hero = () => {
   const { t } = useTranslation(Translations.MAIN);
+  const router = useRouter();
   const handleScrollToPillExamples = () => {
     const examples = document.getElementById("examples");
     examples?.scrollIntoView({
       behavior: "smooth",
     });
   };
+
+  const handleGoToHomepage = () => {
+    router.push("/");
+  };
   return (
     <Container>
       <Navbar className="container">
-        <span className="book-pill-logo-text">BookPill</span>
+        <span className="book-pill-logo-text" onClick={handleGoToHomepage}>
+          BookPill
+        </span>
         <Button tertiary onClick={handleScrollToPillExamples}>
           Wypróbuj za darmo
         </Button>

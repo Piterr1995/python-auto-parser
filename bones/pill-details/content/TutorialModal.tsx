@@ -4,6 +4,7 @@ import { FaRegHandPointer } from "react-icons/fa";
 import { BsMoonStars, BsSun, BsListOl } from "react-icons/bs";
 import { BiFontSize } from "react-icons/bi";
 import { IoLibrarySharp } from "react-icons/io5";
+import { AiOutlineHome } from "react-icons/ai";
 
 import Modal from "components/molecules/Modal";
 import { useToggle } from "hooks/useToggle";
@@ -42,9 +43,13 @@ const TutorialModal = () => {
       icon: FaRegHandPointer,
       description: t("pill_content_tutorial_text_press_info"),
     },
+    // {
+    //   icon: IoLibrarySharp,
+    //   description: t("pill_content_tutorial_library_info"),
+    // },
     {
-      icon: IoLibrarySharp,
-      description: t("pill_content_tutorial_library_info"),
+      icon: AiOutlineHome,
+      description: t("pill_content_tutorial_home_info"),
     },
     {
       icon: BsListOl,

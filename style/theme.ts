@@ -11,15 +11,6 @@ export const breakpoints = {
 const { mini, mobile, tablet, bigTablet, laptop, desktop } = breakpoints;
 export const theme: DefaultTheme = {
   name: "Main",
-  // palette: {
-  //   green100: "#00C8AA",
-  //   blue100: "#2CACD5",
-  //   black100: "#304040",
-  //   black200: "#303030",
-  //   black300: "#333333",
-  //   bootstrapDark: "#343a40",
-  //   red100: "#E46363",
-  // },
   fontSize: {
     xxs: "0.9rem",
     xs: "1.3rem",

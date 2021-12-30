@@ -301,7 +301,6 @@ export async function getStaticProps({
     const author = authors.find((author) => author.id === authorId);
     pillAuthors.push(author);
   });
-  console.log(pillAuthors);
 
   return {
     props: {

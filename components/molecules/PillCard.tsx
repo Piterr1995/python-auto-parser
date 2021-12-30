@@ -3,13 +3,13 @@ import Link from "next/link";
 import styled from "styled-components";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import Spacer from "components/atoms/Spacer";
+import { theme } from "style/theme";
 
 const CardBackground = "/images/dynamic-style.png";
 
 const Card = styled.div`
   border-radius: 1.5rem;
   background: url(${CardBackground});
-  /* border: 4px solid #cacaca; */
   cursor: pointer;
   img {
     width: 100%;
@@ -41,6 +41,14 @@ const Card = styled.div`
       }
     }
   }
+
+  @media screen and ${theme.breakpoints.bigTablet} {
+    .data {
+      .authors {
+        font-size: var(--s);
+      }
+    }
+  }
 `;
 
 const A = styled.a`
@@ -62,17 +70,17 @@ type PillCardProps = {
   destinationUrl: string;
 };
 const PillCard = ({
-  cover,
-  title,
   authors,
-  timeToRead,
+  cover,
   destinationUrl,
+  timeToRead,
+  title,
 }: PillCardProps) => {
   return (
-    <Link href={destinationUrl}>
+    <Link href={destinationUrl} passHref>
       <A>
         <Card className="shadow">
-          <img src={cover} />
+          <img src={cover} alt="cover-image" />
           <div className="data">
             <h1 className="title">{title}</h1>
             <h2 className="authors">{authors}</h2>

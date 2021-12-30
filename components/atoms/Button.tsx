@@ -13,7 +13,7 @@ const Button = styled.button<ButtonProps>`
   border: none;
   outline: none;
   padding: 0.5rem 1.5rem;
-  font-size: ${({ theme }) => theme.fontSize.xs};
+  font-size: var(--xs);
   color: white;
   background-color: var(--green100);
 

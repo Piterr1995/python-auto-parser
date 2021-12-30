@@ -18,8 +18,8 @@ import { theme } from "style/theme";
 const Background = "/images/dynamic-style.png";
 
 type CommonProps = {
-  isDarkTheme: boolean;
   fontSize: number;
+  isDarkTheme: boolean;
 };
 
 const StyledH1 = styled.h1<Pick<CommonProps, "fontSize">>`
@@ -305,7 +305,7 @@ export async function getStaticProps({
 }) {
   const { pillId } = params;
   const pill = pills.find((pill) => pill.id === +pillId);
-  const { title, chapters } = pill;
+  const { title, chapters }: any = pill;
 
   return {
     props: {
@@ -313,5 +313,6 @@ export async function getStaticProps({
       chapters,
       ...(await serverSideTranslations(locale, [Translations.MAIN])),
     },
+    revalidate: 3600,
   };
 }

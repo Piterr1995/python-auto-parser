@@ -13,7 +13,7 @@ const StyledH1 = styled.h1`
     font-size: var(--l);
   }
 `;
-const ChapterList = styled.ul<{ fontSize: number }>`
+const ChapterList = styled.ul`
   list-style: none;
   padding: 10px;
   margin-top: 0;

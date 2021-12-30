@@ -55,6 +55,7 @@ const PillCardsContainer = styled.div`
 
   @media screen and ${theme.breakpoints.bigTablet} {
     grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
     &::-webkit-scrollbar {
       display: none;
     }

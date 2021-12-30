@@ -14,7 +14,7 @@ const Content = styled.div`
 
   @media screen and ${theme.breakpoints.bigTablet} {
     * {
-      line-height: 3.2rem;
+      line-height: 2.6rem;
       font-size: 1.4rem;
     }
   }
@@ -24,7 +24,7 @@ const AuthorsInfoWrapper = styled.div`
   display: grid;
   grid-gap: 1rem;
 
-  .author {
+  .author-name {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--grey200);
@@ -35,8 +35,8 @@ const AuthorsInfo = ({ authors }: any) => (
   <AuthorsInfoWrapper>
     {authors.map((author: any) => (
       <div key={author}>
-        <p className="author">{author.name.toUpperCase()}</p>{" "}
-        <div>{parse(author.description)}</div>
+        <p className="author-name">{author.name.toUpperCase()}</p>{" "}
+        <div className="author-description">{parse(author.description)}</div>
       </div>
     ))}
   </AuthorsInfoWrapper>

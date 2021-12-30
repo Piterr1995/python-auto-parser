@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 type ProgressBarProps = {
-  progress: number;
-  isVisible: boolean;
   isDarkTheme: boolean;
+  isVisible: boolean;
+  progress: number;
 };
 const ProgressBarContainer = styled.div<Pick<ProgressBarProps, "isVisible">>`
   display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
@@ -36,9 +36,9 @@ const ProgressBarFill = styled.div<ProgressBarFillProps>`
 `;
 
 const ProgressBar = ({
-  progress,
-  isVisible,
   isDarkTheme,
+  isVisible,
+  progress,
 }: ProgressBarProps) => (
   <ProgressBarContainer isVisible={isVisible}>
     <FullProgressWrapper isDarkTheme={isDarkTheme}>

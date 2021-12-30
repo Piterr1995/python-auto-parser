@@ -11,14 +11,14 @@
   "home_second_pros_title": "Oszczędzasz czas",
   "home_second_pros_description": "Przeczytanie książki zawierającej 300 stron wynosi ok. 9 godzin. Dzięki BookPill i wbudowanym narzędziom ułatwiającym czytanie skracasz ten czas do maksymalnie 15 minut.",
   "home_third_pros_title": "Szybciej się uczysz",
-  "home_third_pros_description": "Czerpiąc wiedzę z wielu źródeł szybciej się uczysz. Poznajesz perspektywy różnych autorów i szybciej stosujesz zdobytą wiedzę w praktyce.",
+  "home_third_pros_description": "Czerpiąc wiedzę z wielu źródeł szybciej się uczysz, poznajesz perspektywy wielu autorów i możesz szybciej zastosować zdobytą wiedzę w praktyce.",
   "home_fourth_pros_title": "Posiadasz własną bibliotekę",
-  "home_fourth_pros_description": "Dzięki własnej bibliotece możesz w każdej chwili wrócić do swoich ulubionych pozycji, a propozycje książek są dostosowane do Twoich preferencji",
+  "home_fourth_pros_description": "Dzięki własnej bibliotece możesz w każdej chwili wrócić do swoich ulubionych pozycji, a propozycje książek są dostosowywane do Twoich potrzeb.",
 
   "home_demo_presentation_title": "Narzędzia ułatwiające czytanie",
-  "home_demo_presentation_description": "Reguluj czcionkę i zmieniaj tryby dla maksymalizacji komfortu czytania. Używaj nawigacji do szybkiego przejścia do treści, które Cię interesują. Wypróbuj klikając w animowane ikony!",
-  "home_demo_presentation_pill_title": "Myśli i charakter",
-  "home_demo_presentation_pill_content": "Myśli tworzą człowieka takim, jakim jest. Dotyczy to każdej dziedziny ludzkiego życia. Podobnie jak drzewo wyrasta z nasiona, tak samo czyny ludzkie, zarówno te spontaniczne lub 'bezmyślne', jak i te podjęte w pełni świadomie, wynikają z myśli, które mu towarzyszą. ",
+  "home_demo_presentation_description": "Dzęki wbudowanym narzędziom możesz regulować czcionkę i zmieniać tryby dla maksymalizacji komfortu czytania, a nawigacja ułatwia błyskawiczne przejście do treści, które Cię interesują. Wypróbuj klikając w animowane ikony!",
+  "home_demo_presentation_pill_title": "Pragnienie - pierwszy krok do bogactwa",
+  "home_demo_presentation_pill_content": "<p>Pragnienie jest punktem wyjścia wszystkich osiągnięć. W kwestii bogactwa może zostać zrealizowane w 6 krokach:</p><ul><li>ustalenie w umyśle dokładnej sumy pieniędzy, której się pragnie;</li><li>precyzyjne określenie, co zostanie wykonane w zamian za pieniądze;</li><li>ustalenie konkretnej daty uzyskania pieniędzy;</li><li>stworzenie konkretnego planu realizacji swego pragnienia i rozpoczęcie działań;</li><li>napisanie jasnego oświadczenia o konkretnej kwocie pieniędzy, terminie ich zdobycia, działań, które będą wykonane w zamian za pieniądze i planu zgromadzenia tych środków;</li><li>odczytywanie oświadczenia na głos dwa razy dziennie &ndash; rano (po wstaniu) i wieczorem (przed snem).</li></ul><p>Podczas czytania należy poczuć i uwierzyć, że już posiada się te pieniądze. Tylko ci, którzy stają się &bdquo;świadomi pieniędzy&rdquo;, zdobywają bogactwo. Nie ma rzeczy niemożliwych dla osoby, która łączy pragnienie z wytrwałą wiarą. Każde osiągnięcie, bez względu na to, jaki jest jego charakter i jaka może być jego natura lub cel, musi rozpocząć się od intensywnego pragnienia czegoś konkretnego.</p>",
 
   "home_join_us_title": "Dołącz do społeczności czytelników i wypróbuj BookPill za darmo już teraz!",
 
@@ -52,6 +52,8 @@
   "pill_content_tutorial_title": "Instrukcja",
   "pill_content_tutorial_text_press_info": "Kliknięcie w tekst spowoduje pojawienie/ukrycie się menu i paska postępu",
   "pill_content_tutorial_library_info": "Powrót do biblioteki",
+  "pill_content_tutorial_home_info": "Powrót do strony głównej",
+
   "pill_content_tutorial_chapter_list_info": "Lista rozdziałów i nawigacja",
   "pill_content_tutorial_theme_change_info": "Zmiana na tryb nocny/dzienny",
   "pill_content_tutorial_font_size_change_info": "Zmiana rozmiaru czcionki",

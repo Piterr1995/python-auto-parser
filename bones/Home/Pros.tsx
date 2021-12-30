@@ -1,7 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import { useTranslation } from "next-i18next";
 import { HiOutlineDocumentSearch } from "react-icons/hi";
-import { BiTimer, BiBrain } from "react-icons/bi";
+import { BiTimer } from "react-icons/bi";
+import { FiFastForward } from "react-icons/fi";
+import { IoLibraryOutline } from "react-icons/io5";
 
 import { Translations } from "enums";
 import Spacer from "components/atoms/Spacer";
@@ -109,11 +111,11 @@ const ProsContainer = styled.div`
 
     .pros-items-container {
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 1rem;
+      grid-gap: 2rem;
 
       .pros {
-        line-height: 3rem;
-
+        /* line-height: 3rem; */
+        grid-template-rows: 40px 30px 1fr;
         svg {
           color: var(--green100);
           transform: translateX(0%) scale(1.1, 1.1);
@@ -130,7 +132,6 @@ const ProsContainer = styled.div`
   }
   @media screen and ${theme.breakpoints.desktop} {
     margin-top: 40rem;
-    /* padding: 10rem; */
   }
 `;
 
@@ -147,11 +148,12 @@ const Pros = () => {
         <div className="pros-items-container">
           <div className="pros">
             <IconWrapper order={1}>
-              <HiOutlineDocumentSearch size={34} className="first-pros" />
+              <FiFastForward size={30} className="first-pros" />
             </IconWrapper>
-            <h2 className="no-space">{t("home_first_pros_title")}</h2>
-            <p className="no-space">{t("home_first_pros_description")}</p>
+            <h2 className="no-space">{t("home_third_pros_title")}</h2>
+            <p className="no-space">{t("home_third_pros_description")}</p>
           </div>
+
           <div className="pros">
             <IconWrapper order={2}>
               <BiTimer size={34} className="first-pros" />
@@ -161,14 +163,14 @@ const Pros = () => {
           </div>
           <div className="pros">
             <IconWrapper order={3}>
-              <BiBrain size={30} className="first-pros" />
+              <HiOutlineDocumentSearch size={34} className="first-pros" />
             </IconWrapper>
-            <h2 className="no-space">{t("home_third_pros_title")}</h2>
-            <p className="no-space">{t("home_third_pros_description")}</p>
+            <h2 className="no-space">{t("home_first_pros_title")}</h2>
+            <p className="no-space">{t("home_first_pros_description")}</p>
           </div>
           <div className="pros">
             <IconWrapper order={4}>
-              <BiBrain size={30} className="first-pros" />
+              <IoLibraryOutline size={30} className="first-pros" />
             </IconWrapper>
             <h2 className="no-space">{t("home_fourth_pros_title")}</h2>
             <p className="no-space">{t("home_fourth_pros_description")}</p>

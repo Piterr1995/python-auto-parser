@@ -8,6 +8,7 @@ import { GlobalStyle } from "style/globalStyle";
 import { theme } from "style/theme";
 import { HANDLE_WINDOW_WIDTH_CHANGE } from "actions";
 import { Alerts, AuthModals } from "enums";
+import Navbar from "components/organisms/Navbar";
 
 type InitialState = {
   windowWidth: number;
@@ -71,6 +72,7 @@ export const AppContextProvider = ({ children }: AppContextProviderProps) => {
       value={{ state: memoizedState, dispatch: memoizedDispatch }}
     >
       <GlobalStyle />
+      <Navbar />
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </AppContext.Provider>
   );

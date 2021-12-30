@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import styled, { keyframes } from "styled-components";
+import parse from "html-react-parser";
 import { useTranslation } from "react-i18next";
 import { BiFontSize } from "react-icons/bi";
 import { BsMoonStars, BsSun } from "react-icons/bs";
@@ -36,7 +37,6 @@ const TextAndBlobContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border-right: 3px dotted lightgray;
 
   .title {
     color: white;
@@ -51,6 +51,7 @@ const TextAndBlobContainer = styled.div`
 
   @media screen and ${theme.breakpoints.bigTablet} {
     text-align: left;
+    border-right: 3px dotted lightgray;
 
     .title {
       color: var(--black300);
@@ -62,12 +63,20 @@ const TextAndBlobContainer = styled.div`
     .description-large-screen {
       display: block;
       margin: 0;
+      font-size: 1.4rem;
+      line-height: 2.5rem;
     }
 
     .blob-container {
       display: block;
-      width: 16rem;
+      width: 14rem;
       margin: auto;
+    }
+  }
+
+  @media screen and ${theme.breakpoints.desktop} {
+    .description-large-screen {
+      font-size: 1.5rem;
     }
   }
 `;
@@ -133,6 +142,10 @@ const PhoneImageContent = styled.div<PhoneImageContentProps>`
   left: 0;
   right: 0;
   top: 0.7rem;
+
+  ul {
+    padding: 0 0 0 1.5rem;
+  }
   p,
   b {
     margin: 0 0 0.5rem;
@@ -192,7 +205,7 @@ const AnimatedIcon = styled(
   animation-timing-function: ease-out;
 `;
 
-const fontSizeOptions = [1.1, 1.2, 1.3, 1.4, 1.5];
+const fontSizeOptions = [1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7];
 const Demo = () => {
   const { t } = useTranslation(Translations.MAIN);
   const [isDarkTheme, toggleIsDarkTheme] = useToggle(false);
@@ -232,7 +245,7 @@ const Demo = () => {
                 <b>{t("home_demo_presentation_pill_title")}</b>
               </p>
               <p className="demo-content">
-                {t("home_demo_presentation_pill_content")}
+                {parse(t("home_demo_presentation_pill_content"))}
               </p>
             </PhoneImageContent>
           </ImageWrapper>
@@ -248,9 +261,11 @@ const Demo = () => {
             onClick={handleFontSizeChange}
           />
         </ImageContainer>
-        <p className="description-small-screen">
+        <Spacer y={4} />
+
+        <div className="description-small-screen">
           {t("home_demo_presentation_description")}
-        </p>
+        </div>
       </ContentContainer>
       <Spacer y={8} />
     </Container>

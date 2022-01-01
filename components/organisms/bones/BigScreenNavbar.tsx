@@ -9,7 +9,6 @@ const NavbarWrapper = styled.div`
 `;
 const Navbar = styled.div`
   z-index: 3;
-
   padding: var(--normalPadding);
   font-weight: 700;
   height: 6rem;

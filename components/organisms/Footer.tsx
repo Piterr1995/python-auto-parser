@@ -19,7 +19,7 @@ const Footer = () => {
         Bądź z nami na bieżąco na{" "}
         <FacebookLink href="https://www.facebook.com/bookpillproject">
           Facebooku
-        </FacebookLink>{" "}
+        </FacebookLink>
         !
       </h1>
     </Container>

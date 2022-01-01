@@ -169,17 +169,17 @@ const CardData = styled.div`
       margin-left: 0.5rem;
       font-size: 1.4rem;
     }
+
     @media screen and ${theme.breakpoints.bigTablet} {
       grid-row: 8 / 9;
       margin-top: 2.5rem;
 
       span {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
       }
 
       svg {
-        transform: scale(1.1, 1.1);
-        margin-right: 0.7rem;
+        transform: scale(0.9, 0.9);
       }
     }
   }

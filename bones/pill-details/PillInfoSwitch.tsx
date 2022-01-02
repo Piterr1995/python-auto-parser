@@ -26,7 +26,6 @@ const AuthorsInfoWrapper = styled.div`
   grid-gap: 1rem;
 
   .author-name {
-    font-size: 1.4rem;
     font-weight: 600;
     color: var(--grey200);
     margin: 0.5rem 0;

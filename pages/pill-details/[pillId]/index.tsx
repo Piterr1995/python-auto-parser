@@ -137,6 +137,7 @@ const CardData = styled.div`
     .informations {
       margin: 1.5rem 0 0.5rem;
       font-weight: 500;
+      font-size: 1.4rem;
 
       @media screen and ${theme.breakpoints.bigTablet} {
         display: none;
@@ -145,7 +146,7 @@ const CardData = styled.div`
     .fullTitle,
     .categories {
       margin: 0.5rem 0;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
 
     @media screen and ${theme.breakpoints.bigTablet} {

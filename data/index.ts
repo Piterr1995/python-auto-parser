@@ -74,7 +74,7 @@ export const pills = [
     chapters: [
       {
         title: "Moc myśli",
-        text: `<p>Myśli mają wielką moc, gdy towarzyszy im konkretny cel, wytrwałość i silne pragnienie ich przełożenia na bogactwo lub inne przedmioty materialne. Ważna jest inicjatywa, wiara i wola zwycięstwa. Częstą przyczyną niepowodzenia jest rezygnacja z dalszych starań z powodu chwilowej porażki. Pojawia się ona zazwyczaj, gdy sukces jest już prawie w zasięgu ręki. Należy odrzucić takie myślenie.</p><p>Jeden rozsądny pomysł to wszystko, czego potrzeba, aby osiągnąć sukces. Bogactwo zaczyna się od stanu umysłu i zdefiniowania celu. Sukces przychodzi do tych, którzy stają się świadomi sukcesu. Błędem jest mierzenie wszystkiego i wszystkich według własnych wrażeń i przekonań. Jedną z zasad odniesienia sukcesu jest posiadanie wiedzy o tym, czego się pragnie.</p>`,
+        text: `<p>Myśli mają wielką moc, gdy towarzyszy im konkretny cel, wytrwałość i silne pragnienie ich przełożenia na bogactwo lub inne przedmioty materialne. Ważna jest inicjatywa, wiara i wola zwycięstwa, gdyż częstą przyczyną niepowodzenia jest rezygnacja z dalszych starań z powodu chwilowej porażki. Pojawia się ona zazwyczaj, gdy sukces jest już prawie w zasięgu ręki. Należy odrzucić takie myślenie.</p><p>Jeden rozsądny pomysł to wszystko, czego potrzeba, aby osiągnąć sukces. Bogactwo zaczyna się od stanu umysłu i zdefiniowania celu. Sukces przychodzi do tych, którzy stają się świadomi sukcesu. Błędem jest mierzenie wszystkiego i wszystkich według własnych wrażeń i przekonań. Jedną z zasad odniesienia sukcesu jest posiadanie wiedzy o tym, czego się pragnie.</p>`,
       },
       {
         title: "Pierwszy krok do bogactwa – pragnienie",

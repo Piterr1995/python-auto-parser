@@ -15,7 +15,8 @@ import TutorialModal from "bones/pill-details/content/TutorialModal";
 import { Translations } from "enums";
 import { theme } from "style/theme";
 
-const Background = "/images/dynamic-style.png";
+const LightMatBackground = "/images/dynamic-style.png";
+const DarkMatBackground = "/images/beanstalk-dark.png";
 
 type CommonProps = {
   fontSize: number;
@@ -34,11 +35,25 @@ const ChapterAndTitleWrapper = styled.span<CommonProps>`
   font-size: ${({ fontSize }) => fontSize * 0.75}rem;
 `;
 
-const Container = styled.div<Pick<CommonProps, "isDarkTheme">>`
-  /* background: ${({ isDarkTheme }) =>
-    isDarkTheme ? "var(--bootstrapDark)" : "#f4f4f4"}; */
-  background: ${({ isDarkTheme }) =>
-    isDarkTheme ? "var(--bootstrapDark)" : `url(${Background})`};
+const getBackground = (isDarkTheme: boolean, isBackgroundRugged: boolean) => {
+  if (isDarkTheme && isBackgroundRugged) {
+    return `url(${DarkMatBackground})`;
+  } else if (isDarkTheme && !isBackgroundRugged) {
+    return "var(--bootstrapDark)";
+  } else if (!isDarkTheme && isBackgroundRugged) {
+    return `url(${LightMatBackground})`;
+  } else {
+    return "#fafafa";
+  }
+};
+const Container = styled.div<{
+  isDarkTheme: boolean;
+  isBackgroundRugged: boolean;
+}>`
+  background: ${({ isDarkTheme, isBackgroundRugged }) =>
+    // isDarkTheme ? "var(--bootstrapDark)" : `url(${Background})`};
+    getBackground(isDarkTheme, isBackgroundRugged)};
+  background-repeat: repeat;
   position: relative;
   p,
   h1,
@@ -47,10 +62,11 @@ const Container = styled.div<Pick<CommonProps, "isDarkTheme">>`
   li,
   button {
     font-family: "Arial", sans-serif;
+    background: inherit;
     color: ${({ isDarkTheme, theme }) =>
       isDarkTheme ? "white" : "var(--black100)"};
-    background: ${({ isDarkTheme, theme }) =>
-      isDarkTheme ? "var(--bootstrapDark)" : "inherit"};
+    /* background: ${({ isDarkTheme, theme }) =>
+      isDarkTheme ? "var(--bootstrapDark)" : "inherit"}; */
   }
 `;
 
@@ -130,6 +146,7 @@ const Content = ({ chapters, title }: { chapters: any; title: string }) => {
 
   const [currentChapterIndex, setCurrentChapterIndex] = useState(0);
   const [isDarkTheme, toggleIsDarkTheme] = useToggle(false);
+  const [isBackgroundRugged, toggleIsBackgroundRugged] = useToggle(true);
 
   useEffect(() => {
     const isDarkThemePreferred = !!localStorage.getItem(
@@ -228,13 +245,18 @@ const Content = ({ chapters, title }: { chapters: any; title: string }) => {
         currentChapterIndex={currentChapterIndex}
       />
       <TutorialModal />
-      <Container isDarkTheme={isDarkTheme}>
+      <Container
+        isDarkTheme={isDarkTheme}
+        isBackgroundRugged={isBackgroundRugged}
+      >
         <Navbar
           isDarkTheme={isDarkTheme}
-          handleToggleIsDarkTheme={toggleIsDarkTheme}
+          isBackgroundRugged={isBackgroundRugged}
+          toggleIsDarkTheme={toggleIsDarkTheme}
           isVisible={isNavbarAndProgressVisible}
           handleToggleIsChaptersModalVisible={toggleIsChaptersModalVisible}
           handleFontSizeChange={handleFontSizeChange}
+          toggleisBackgroundRugged={toggleIsBackgroundRugged}
         />
         <ContentContainer fontSize={fontSize}>
           <div onClick={toggleIsNavbarAndProgressVisible}>

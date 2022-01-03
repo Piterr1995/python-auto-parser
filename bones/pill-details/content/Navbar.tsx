@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { BsMoonStars, BsSun, BsListOl } from "react-icons/bs";
 
-import { BiFontSize } from "react-icons/bi";
+import { BiFontSize, BiSquareRounded } from "react-icons/bi";
 import { IoLibrarySharp } from "react-icons/io5";
 import { AiOutlineHome } from "react-icons/ai";
+import { MdOutlineWaves } from "react-icons/md";
 
 import { useAppContext } from "hooks/useAppContext";
 import { Breakpoints, Routes } from "enums";
@@ -12,9 +13,11 @@ import { theme } from "style/theme";
 type NavbarProps = {
   isVisible: boolean;
   isDarkTheme: boolean;
+  isBackgroundRugged: boolean;
   handleFontSizeChange: () => void;
   handleToggleIsChaptersModalVisible: () => void;
-  handleToggleIsDarkTheme: () => void;
+  toggleIsDarkTheme: () => void;
+  toggleisBackgroundRugged: () => void;
 };
 
 type StyledNavbarStyledComponentProps = {
@@ -24,10 +27,11 @@ type StyledNavbarStyledComponentProps = {
 const StyledNavbar = styled.nav<StyledNavbarStyledComponentProps>`
   z-index: 1;
   width: 100vw;
+  background: inherit;
   /* background: ${({ isDarkTheme }) =>
     isDarkTheme ? "var(--bootstrapDark)" : "#f4f4f4"}; */
-  background: ${({ isDarkTheme }) =>
-    isDarkTheme ? "var(--bootstrapDark)" : "inherit"};
+  /* background: ${({ isDarkTheme }) =>
+    isDarkTheme ? "var(--bootstrapDark)" : "inherit"}; */
   color: ${({ isDarkTheme }) => (isDarkTheme ? "white" : "inherit")};
   height: 80px;
   padding: 15px 10px;
@@ -63,6 +67,7 @@ const NavbarItem = styled.div`
 
   @media screen and ${theme.breakpoints.bigTablet} {
     width: 100%;
+    transform: scale(0.75, 0.75);
     &:hover {
       cursor: pointer;
       color: var(--green100);
@@ -73,9 +78,11 @@ const NavbarItem = styled.div`
 const Navbar = ({
   isVisible,
   isDarkTheme,
+  isBackgroundRugged,
   handleFontSizeChange,
   handleToggleIsChaptersModalVisible,
-  handleToggleIsDarkTheme,
+  toggleIsDarkTheme,
+  toggleisBackgroundRugged,
 }: NavbarProps) => {
   const { state } = useAppContext();
 
@@ -92,9 +99,18 @@ const Navbar = ({
       icon: <BsListOl size={50} />,
     },
     {
-      handleClick: handleToggleIsDarkTheme,
+      handleClick: toggleIsDarkTheme,
 
       icon: isDarkTheme ? <BsMoonStars size={50} /> : <BsSun size={50} />,
+    },
+    {
+      handleClick: toggleisBackgroundRugged,
+
+      icon: isBackgroundRugged ? (
+        <BiSquareRounded size={50} />
+      ) : (
+        <MdOutlineWaves size={50} />
+      ),
     },
     {
       handleClick: handleFontSizeChange,

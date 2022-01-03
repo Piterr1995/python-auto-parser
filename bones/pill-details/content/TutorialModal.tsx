@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import { FaRegHandPointer } from "react-icons/fa";
-import { BsMoonStars, BsSun, BsListOl } from "react-icons/bs";
-import { BiFontSize } from "react-icons/bi";
+import { BsSun, BsListOl } from "react-icons/bs";
+import { BiFontSize, BiSquareRounded } from "react-icons/bi";
 import { IoLibrarySharp } from "react-icons/io5";
 import { AiOutlineHome } from "react-icons/ai";
 
@@ -58,6 +58,10 @@ const TutorialModal = () => {
     {
       icon: BsSun,
       description: t("pill_content_tutorial_theme_change_info"),
+    },
+    {
+      icon: BiSquareRounded,
+      description: t("pill_content_tutorial_background_rugged_info"),
     },
     {
       icon: BiFontSize,

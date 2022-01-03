@@ -19,8 +19,7 @@ const FullProgressWrapper = styled.div<
 >`
   width: 90%;
   border-radius: 5px;
-  background-color: ${({ isDarkTheme }) =>
-    isDarkTheme ? "var(--bootstrapDark)" : "white"};
+
   border: 1px solid
     ${({ isDarkTheme }) => (isDarkTheme ? "white" : "var(--black100)")};
   height: 10px;

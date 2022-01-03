@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-family: "Poppins";
+      font-family: "Poppins", "Helvetica";
 
       }
 

@@ -102,6 +102,7 @@ const ProsContainer = styled.div`
       grid-gap: 0.5rem;
       justify-content: space-around;
       z-index: 3;
+      line-height: 2.5rem;
     }
   }
 

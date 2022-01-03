@@ -15,6 +15,7 @@ const Navbar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   .book-pill-logo-text {
     background: linear-gradient(to right, var(--green100), var(--blue100));
     -webkit-background-clip: text;
@@ -37,7 +38,7 @@ const MobileTopNavbar = () => {
           onClick={handleLogoClick}
           role="button"
         >
-          Bookpill
+          BookPill
         </div>
       </Navbar>
     </NavbarWrapper>

@@ -70,6 +70,9 @@ const ContentContainer = styled.div<Pick<CommonProps, "fontSize">>`
     h1 {
       font-size: ${({ fontSize }) => fontSize * 1.05}rem;
     }
+    strong {
+      font-size: ${({ fontSize }) => fontSize * 0.9}rem;
+    }
     p {
       margin: 2rem 0;
     }

@@ -92,6 +92,7 @@ const ProsContainer = styled.div`
   padding: 3rem 0;
   background-color: var(--lightgray200);
   position: relative;
+  overflow: hidden;
 
   .pros-items-container {
     display: grid;

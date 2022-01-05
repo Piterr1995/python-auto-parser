@@ -10,7 +10,7 @@ import Blob from "components/atoms/Blob";
 
 const Container = styled.div`
   position: relative;
-
+  overflow: hidden;
   .blob-container {
     display: none;
     @media screen and ${theme.breakpoints.bigTablet} {

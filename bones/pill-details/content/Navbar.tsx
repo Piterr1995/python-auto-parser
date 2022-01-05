@@ -28,10 +28,6 @@ const StyledNavbar = styled.nav<StyledNavbarStyledComponentProps>`
   z-index: 1;
   width: 100vw;
   background: inherit;
-  /* background: ${({ isDarkTheme }) =>
-    isDarkTheme ? "var(--bootstrapDark)" : "#f4f4f4"}; */
-  /* background: ${({ isDarkTheme }) =>
-    isDarkTheme ? "var(--bootstrapDark)" : "inherit"}; */
   color: ${({ isDarkTheme }) => (isDarkTheme ? "white" : "inherit")};
   height: 80px;
   padding: 15px 10px;
@@ -63,11 +59,10 @@ const StyledNavbar = styled.nav<StyledNavbarStyledComponentProps>`
 const NavbarItem = styled.div`
   text-align: center;
   display: inline-block;
-  width: 25%;
+  width: 20%;
 
   @media screen and ${theme.breakpoints.bigTablet} {
     width: 100%;
-    transform: scale(0.75, 0.75);
     &:hover {
       cursor: pointer;
       color: var(--green100);
@@ -91,31 +86,31 @@ const Navbar = ({
       handleClick: () => {
         window.location.href = Routes.HOME;
       },
-      icon: <AiOutlineHome size={50} />,
+      icon: <AiOutlineHome size={35} />,
     },
     {
       handleClick: handleToggleIsChaptersModalVisible,
 
-      icon: <BsListOl size={50} />,
+      icon: <BsListOl size={35} />,
     },
     {
       handleClick: toggleIsDarkTheme,
 
-      icon: isDarkTheme ? <BsMoonStars size={50} /> : <BsSun size={50} />,
+      icon: isDarkTheme ? <BsMoonStars size={35} /> : <BsSun size={35} />,
     },
     {
       handleClick: toggleisBackgroundRugged,
 
       icon: isBackgroundRugged ? (
-        <BiSquareRounded size={50} />
+        <MdOutlineWaves size={35} />
       ) : (
-        <MdOutlineWaves size={50} />
+        <BiSquareRounded size={35} />
       ),
     },
     {
       handleClick: handleFontSizeChange,
 
-      icon: <BiFontSize size={50} />,
+      icon: <BiFontSize size={35} />,
     },
   ];
   return (

@@ -286,7 +286,7 @@ export const pills = [
         Żaden człowiek nie może być w pełni szczęśliwy, dopóki nie osiągnie w swoim
         życiu pewnego poziomu bogactwa. Wynika to między innymi z faktu, że aby
         całkowicie rozwinąć skrzydła, konieczne jest posiadanie odpowiednich środków i
-        narzędzi, które zazwyczaj wymagają wkładu finansowego. Sukces w życiu jest
+        narzędzi, które zazwyczaj wymagają pieniędzy. Sukces w życiu jest
         tożsamy ze staniem się osobą, którą chcieliśmy być, a żeby to osiągnąć trzeba posiadać arsenał z odpowiednimi zasobami.
         Warto wspomnieć, że gotówka nie jest pełnym wyznacznikiem bogactwa.
         Jednostka potrzebuje spełnienia i samorealizacji w trzech obszarach, na które
@@ -295,16 +295,17 @@ export const pills = [
       <p>
         Rozwój sfery cielesnej związany jest z pragnieniem pozostania w dobrym
         zdrowiu. Aby spełnić ten cel, należy między innymi prawidłowo się odżywiać
-        oraz zadbać o odpowiednią ilość ruchu. Człowiek pragnie również rozwijać się w
-        sferze intelektualnej. W związku z tym potrzebuje dostępu do rozmaitych źródeł
-        edukacji – książek, badań, itp. Ostatnim elementem jest rozwój duszy, dla
+        oraz zadbać o odpowiednią ilość ruchu.</p>
+        <p>Człowiek pragnie również rozwijać się w
+        sferze intelektualnej, w związku z tym potrzebuje dostępu do rozmaitych źródeł
+        edukacji – książek, badań, itp.</p><p> Ostatnim elementem jest rozwój duszy, dla
         którego charakterystyczne jest pragnienie miłości, wewnętrznego spełnienia
         oraz radości życia.
       </p>
       <p>
-        Warto podkreślić, że ludzie nie powinni odczuwać wstydu z powodu pragnienia
-        bogactwa. Mają pełne prawo chcieć czerpać z życia więcej. Faktem jest, że
-        osoba, która osiągnęła szczęście i bogactwo, może w lepszy sposób wpłynąć na
+        Wyliczając te cechy warto podkreślić, że ludzie nie powinni odczuwać wstydu z powodu pragnienia
+        bogactwa. Mają pełne prawo chcieć czerpać z życia więcej, albowiem faktem jest, że
+        osoba, która osiągnęła szczęście i bogactwo, może w znacznie lepszy sposób wpłynąć na
         rozwój społeczeństwa niż jednostka żyjąca w ubóstwie.
       </p>`,
       },
@@ -315,17 +316,18 @@ export const pills = [
           Dojście do bogactwa jest pewnym procesem, którego działania trzeba się
           nauczyć. Gdyby zależało ono wyłącznie od urodzenia w określonej grupie
           społecznej, jedynie osoby z bogatych domów byłyby szczęśliwe i
-          spełnione. Wiadomo jednak, że tak nie jest. Istnieją środowiska mniej zamożne, w
+          spełnione. Wiadomo jednak, że tak nie jest. </p>
+         <p> Istnieją środowiska mniej zamożne, w
           których dojście do bogactwa wymaga o wiele większego wysiłku. Jak jednak
           wytłumaczyć fakt, że w ubogiej społeczności jedni potrafią dojść do bogactwa,
-          rozwijać biznesy i zaspokajać potrzeby ludzi, podczas gdy inni w tej samej
+          rozwijać interesy i zaspokajać potrzeby ludzi, podczas gdy inni dokładnie w tej samej
           grupie pozostają w skrajnej nędzy i obwiniają wszystko i wszystkich za swój
           los? Różnica polega na tym, że ci pierwsi obrali w życiu WŁAŚCIWĄ DROGĘ.
         </p>
         <p>
           Często bywa tak, że ludzie niewykształceni i z biedniejszych środowisk
           osiągnęli w życiu wiele za sprawą sprytu i zaradności, której czasem brakuje
-          ludziom wykształconym. Biorąc pod uwagę ludzi zamożnych możemy wyróżnić dwie
+          ludziom z dyplomami. Biorąc pod uwagę ludzi zamożnych możemy wyróżnić dwie
           grupy – osoby, które pozostają zamożne przez całe życie oraz takie, które
           przez swoją bezmyślność tracą majątek i są zamożne jedynie przez określony
           czas.
@@ -335,8 +337,8 @@ export const pills = [
           rozpoczęło się albo zainwestowało w niewłaściwy biznes, należy go zmienić lub
           się z niego wycofać. Jeśli nasza lokalizacja jest ograniczająca i nie
           pozwala na rozwój, również jej zmiana będzie konieczna. Warto więc zacząć od
-          miejsca, w którym aktualnie jesteśmy i wyciągać wnioski z doświadczonych porażek. Jest to
-          pewnego rodzaju cena, którą należy zapłacić za osiągnięcie sukcesu.
+          miejsca, w którym aktualnie jesteśmy i wyciągać wnioski z doświadczanych porażek. Jest to
+          pewnego rodzaju cena, którą należy zapłacić by dojść do miejsca, którego się pragnie.
         </p>`,
       },
       {
@@ -345,7 +347,7 @@ export const pills = [
         text: `<p>
         Nikt nie pozostaje w biedzie jedynie z takiego powodu, że rynek został
         opanowany przez bogaczy, którzy zabrali dla siebie wszystkie możliwe okazje.
-        Monopol na okazje więc nie istnieje. Ważny jest natomiast spryt i chłodna
+        Monopol na okazje więc nie istnieje. W świecie biznesu Ważny jest natomiast spryt i chłodna
         kalkulacja.
       </p>
       <p>
@@ -356,9 +358,9 @@ export const pills = [
       <p>
         Ziemia dostarcza nam nieograniczonej liczby surowców i bogactw, które możemy
         spożytkować na tysiące sposobów. Ciągle powstają nowe technologie i
-        urządzenia, na które nieustannie wzrasta popyt. Nigdy nie jest tak, że dana
-        dziedzina czy surowiec wyczerpią się i będziemy skazani na stagnację z powodu
-        ich braku. Świadomość tego zjawiska jest kolejną z istot zrozumienia Właściwej
+        urządzenia, na które nieustannie wzrasta popyt. Nigdy nie pojawia się taka sytuacja, że dana
+        dziedzina czy surowiec wyczerpują się do zera i stajemy się skazani na stagnację z powodu
+        braku innych możliwości. Świadomość tego zjawiska jest kolejną z istot zrozumienia Właściwej
         Drogi.
       </p>
       `,
@@ -368,7 +370,7 @@ export const pills = [
         title: "Pierwsza zasada w nauce zdobywania bogactwa",
         text: `<p>
         Myśl jest jedyną siłą, która może przekształcić niematerialną formę w coś,
-        czego można dotknąć lub doświadczyć. Najpierw powstaje myśl, następnie
+        czego można dotknąć lub doświadczyć. Sechemat jej funkcjonowania jest prosty. Najpierw powstaje myśl, następnie
         pojawiają się zjawiska i ruchy, których zadaniem jest stworzenie przedmiotu
         zgodnego z tą myślą, a na końcu, jako zwieńczenie całego procesu, powstaje
         oczekiwana forma lub zjawisko. Każda myśl, zwłaszcza powtarzana wielokrotnie,
@@ -378,7 +380,7 @@ export const pills = [
         dzieje się to oczywiście natychmiastowo, lecz
         <strong
           >to właśnie myśli organizują energię i zasoby, które nas otaczają, aby mogły
-          się urzeczywistnić. </strong
+          się one urzeczywistnić. </strong
         >
       </p>
       <p>
@@ -391,7 +393,7 @@ export const pills = [
         jako <strong>już otrzymanych</strong>. Innymi słowy, uznać przedmiot myśli
         jako <strong>już istniejący</strong>. Nie należy kontemplować nad argumentami
         przeczącymi tej teorii i wątpić w jej istnienie. Nauka stawania się bogatym
-        zaczyna się właśnie od akceptacji mocy swojej wiary.
+        zaczyna się właśnie od uświadomienia sobie mocy swojej wiary.
       </p>
       `,
       },
@@ -404,12 +406,12 @@ export const pills = [
         kimś więcej, zamiast wmawiać sobie, że bieda i cierpienie są cnotą.
       </p>
       <p>
-        Poniżej przedstawiono listę prawd, które pomogą Ci w zrozumieniu istoty
+        Poniżej przedstawiono listę prawd, które pomagają w zrozumieniu istoty
         Właściwej Drogi:
       </p>
       <ul>
         <li>
-          Ta sama siła sprawiająca, że chcesz mieć więcej pieniędzy powoduje wzrost
+          Ta sama siła sprawiająca, że pragnie się więcej pieniędzy powoduje wzrost
           ziarna rzuconego na glebę. Jest ona MYŚLĄCĄ SUBSTANCJĄ. 
         </li>
         <li>
@@ -420,15 +422,15 @@ export const pills = [
           Bóg chce, abyś był bogaty. Chce, abyś osiągał więcej i chce Twojego
           spełnienia.
         </li>
-        <li>Wszechświat chce, abyś osiągał rzeczy, które chcesz mieć.</li>
+        <li>Wszechświat chce, abyś osiągał rzeczy, których pragniesz .</li>
         <li>Natura sprzyja realizacji Twoich planów.</li>
-        <li>Wszystkie zjawiska są dla ciebie czymś naturalnym.</li>
-        <li>Zaakceptuj, że wszystkie te twierdzenia SĄ PRAWDĄ.</li>
+        <li>Wszystkie zjawiska dookoła Ciebie są naturalne.</li>
+        <li>Zaakceptuj, że wszystkie powyższe twierdzenia <strong>SĄ PRAWDĄ.</strong></li>
       </ul>
       <p>Kolejna część rad:</p>
       <ul>
         <li>
-          Porzuć myśli o konkurowaniu. Masz kreować, a nie walczyć o coś, co już
+          Należy porzucić myśli o konkurowaniu. Człowiek powinien kreować, a nie walczyć o coś, co już
           istnieje.
         </li>
         <li>Nie musisz brać czegokolwiek od kogokolwiek.</li>
@@ -448,7 +450,7 @@ export const pills = [
           wymagają one pewnego procesu.
         </li>
       </ul>
-      <p>Pamiętaj o powyższych radach podczas formułowania swoich myśli.</p>
+      <p>Pamiętaj o powyższych radach podczas konstruowania swoich myśli.</p>
       `,
       },
       {
@@ -466,8 +468,8 @@ export const pills = [
         Wiele osób pozostaje w sferze ubóstwa między innymi dlatego, że nie potrafi
         odczuwać wdzięczności za otrzymane dary. Nie jest więc sekretem, że osoby
         potrafiące być wdzięczne, dostają jeszcze więcej powodów do bycia wdzięcznymi.
-        Są oni zdecydowanie bliżsi zdobycia bogactwa niż ci, którzy o tym fakcie
-        zapomnieli. Dodatkowo, uczucie to pozwala bardziej skupić się na rzeczach,
+        Są one zdecydowanie bliższe zdobycia bogactwa niż ci, którzy o tym fakcie
+        zapomnieli. Dodatkowo uczucie to pozwala bardziej skupić się na rzeczach,
         których pragniemy, niż na myślach o konkurencji i ograniczeniach.
       </p>
       <p>
@@ -481,9 +483,9 @@ export const pills = [
       </p>
       <p>
         Za każdym pragnieniem kryje się powód, dla którego chcemy posiadać daną rzecz
-        lub coś osiągnąć. Warto więc być w pełni jego świadomym. Ważnym elementem jest
+        lub coś osiągnąć. Warto świadomym tego faktu i poznać swoje motywy. Ważnym elementem jest
         także niezachwiana <strong>wiara</strong> w to, że kiedyś założony cel
-        zostanie spełniony.
+        zostanie osiągnięty.
       </p>
       `,
       },
@@ -526,10 +528,10 @@ export const pills = [
         title: "Działanie cz. 1",
         text: `<p>
         Myśl jest siłą napędową, która daje początek procesowi osiągania bogactwa. Nie
-        otrzymasz jej jednak do momentu, gdy nie podejmiesz odpowiednich
-        <strong>działań</strong>. Innymi słowy, wymagana jest
+        otrzymasz go jednak do momentu, w którym podejsmiesz odpowiednie
+        <strong>działania</strong>. Innymi słowy, wymagana jest
         <strong>własna ingerencja i własny wysiłek</strong>, aby urzeczywistnić moc
-        naszych myśli.
+        swoich myśli.
       </p>
       <p>
         Kolejną kwestią, o której nie należy zapominać, jest danie sobie przyzwolenia
@@ -539,7 +541,7 @@ export const pills = [
         gdzie myśl i działanie łączą się ku realizacji celu. Istnieje bardzo wiele
         osób, które świadomie lub nieświadomie wkładają bardzo wiele wysiłku w
         realizację celu, lecz pozostają biedni, ponieważ nie dają sobie przyzwolenia
-        na otrzymanie obiektu swoich dążeń. 
+        na otrzymanie obiektu, dla którego czynili wysiłki. 
       </p>
       <p>
         Włóż więc całą swoją siłę w <strong>obecne</strong> działanie. Nie odkładaj
@@ -593,32 +595,29 @@ export const pills = [
           >nie wykonały odpowiedniej pracy</strong
         >
         ku jego osiągnięciu. Będąc uzdolnionym w jakiejś dziedzinie posiadasz unikalne
-        NARZĘDZIA, lecz dopiero gdy zostaną odpowiednio wykorzystane, pomogą w
+        <strong>narzędzia</strong>, lecz dopiero gdy zostaną <strong>odpowiednio wykorzystane</strong>, pomogą w
         wykonaniu pracy, która jest konieczna do osiągnięcia celu. 
       </p>
       <p>
         Ważne jest uświadomienie sobie, że nie musisz bogacić się w każdym biznesie.
-        Człowiek osiąga najlepsze wyniki, jeśli ma do czegoś naturalne predyspozycje.
-        Wtedy wiele rzeczy przychodzi mu z łatwością. Jeżeli więc masz listę biznesów,
-        które chciałbyś otworzyć lub do których chciałbyś dołączyć i wszystkie wydają
-        się równie atrakcyjne, najlepiej będzie jeśli wybierzesz ten, w którym
+        Człowiek osiąga najlepsze wyniki, jeśli ma do czegoś naturalne predyspozycje, ponieważ
+        wiele rzeczy przychodzi mu wtedy z łatwością. Jeżeli więc posiadasz listę biznesów,
+        które chciałbyś otworzyć lub do których chciałbyś dołączyć, i wszystkie wydają
+        się być równie atrakcyjne, prawdopodobnie najlepszym wyborem będzie ten, w którym
         dostrzegasz swoje naturalne zdolności.
       </p>
       <p>
-        Natomiast jeżeli w przeszłości popełniłeś błędy, które doprowadziły Cię do
+        Jeżeli natomiast w przeszłości popełniłeś błędy, które doprowadziły Cię do
         niekorzystnego biznesu oraz związały Cię z nim na dłuższy czas, nie musisz
-        załamywać się. Pamiętaj, że wiele zależy od Ciebie i możesz uczynić nielubianą
-        pracę lepszą. Dzieje się to za sprawą postawienia sobie celu, dzięki któremu
-        będziesz mógł robić coś ciekawszego w aktualnej pracy lub zupełnie innym
-        interesie. Zwróć uwagę na to, że <strong
-          >najlepszym sposobem na zmianę biznesu lub środowiska jest rozwój.</strong
+        się załamywać i rozmyślać nad swoją porażką. Wiele rzeczy i zjawisk zależy od naszej interpretacji na ich temat.
+        Możesz uczynić swoją aktualną pracę o wiele lepszą, jeśli wyznaczysz sobie cel, dzięki któremu
+        będziesz mógł robić w niej coś ciekawszego lub nabyć umiejętności, które pozwolą Ci na jej zmianę. Warto zwrócić uwagę na to, że <strong
+          >najlepszym sposobem na zmianę biznesu lub środowiska jest nieustanny rozwój.</strong
         >
       </p>
       <p>
-        Warto więc poświęcić dzień lub dwa na zbudowanie wizji na temat swoich
-        pragnień oraz na szczerej wdzięczności za to co otrzymujesz. To z kolei
-        doprowadzi Twój umysł do bliskiego związku z Inteligentną Substancją – wiary,
-        że nie popełnisz błędu podczas swojej drogi do samorealizacji. Jeżeli
+        Poświęcenie dnia lub dwóch na zbudowanie wizji na temat swoich
+        marzeń oraz na szczerej wdzięczności za to co otrzymujesz z pewnością skieruje Twój umysł na właściwe tory, dzięki czemu o wiele łatwiej będzie zdefiniować zadania, które będą musiały zostać zrealizowane na drodze do osiągnięcia celu. Jeżeli
         kiedykolwiek zauważysz, że się spieszysz, zatrzymaj się na mentalnym obrazie
         rzeczy, której pragniesz i zacznij dziękować, że ją otrzymałeś.
       </p>
@@ -792,11 +791,11 @@ export const pills = [
     timeToRead: 18,
     categories: ["rozwój osobisty"],
     purchaseLink: "https://www.enbook.pl/catalog/product/view/id/4944487",
-    description: `<p>Opis książki:</p><ul><li>The Majesty of Calmness to ponadczasowa książka motywacyjna autorstwa William&rsquo;a George&rsquo;a Jordan&rsquo;a, która poprowadzi Cię do osiągnięcia spokoju w Twoim życiu.&nbsp;</li></ul><p>W Pillach zostały zawarte informacje na temat następujących zagadnień:</p><ul><li>spokój jako wartość;</li><li>niszczycielska rola pośpiechu;</li><li>rozmiar wpływu człowieka na otaczającą rzeczywistość;</li><li>znaczenie samodzielności w osiąganiu sukcesu;</li><li>porażka a sukces;</li><li>szczęście jako pojęcie niejednoznaczne.</li></ul>`,
+    description: `<p>Opis książki:</p><ul><li>The Majesty of Calmness to ponadczasowa książka motywacyjna autorstwa William&rsquo;a George&rsquo;a Jordan&rsquo;a, która wskazuje drogę do osiągnięcia spokoju w życiu.</li></ul><p>W Pillach zostały zawarte informacje na temat następujących zagadnień:</p><ul><li>spokój jako wartość;</li><li>niszczycielska rola pośpiechu;</li><li>rozmiar wpływu człowieka na otaczającą rzeczywistość;</li><li>znaczenie samodzielności w osiąganiu sukcesu;</li><li>porażka a sukces;</li><li>szczęście jako pojęcie niejednoznaczne.</li></ul>`,
     chapters: [
       {
         title: "Majestat spokoju",
-        text: `<p>Spokój jest wartością, z której najrzadziej ze wszystkich innych można korzystać w trakcie ludzkiego życia. Wartość ta tworzy atmosferę dookoła danej osoby. Polega ona na koncentracji na własnym działaniu, byciu w jedności z celem, absolutnej pewności siebie oraz byciu samowystarczalnym.</p><p>Prawdziwym rodzajem spokoju nie jest np. kamienna rzeźba, ponieważ jest ona martwa i stanowi wyciszenie wszelkiej energii. Istotą, która żyje najpełniej, najintensywniej, najbardziej świadomie jest człowiek, który przejawia spokój. Taka osoba jest przygotowana na wszelkie sytuacje i trudności. Można powiedzieć o niej, że zachowuje zawsze chłodny umysł, jest pogodna niezależnie od sytuacji, i co najważniejsze, stara się wypełniać wszystkie swoje zadania z każdym dniem coraz lepiej. Taka osoba jest sterem statku, który wypłynął na burzliwe wody, a nawet jeśli zboczy z kursu, może być pewien, że wróci na właściwy tor i będzie kierował się w tę stronę, w którą pierwotnie chciał zmierzać. Metafora steru oraz statku nie jest przypadkowa. Spokój jest jak ocean &ndash; tafla wody może być wzburzona, atakowana przez sztormy i huragany, ale pod powierzchnią np. stu metrów woda jest spokojna. Taki sam jest człowiek. Siła spokoju nie bierze się bowiem z zewnątrz, a z wewnątrz, czyli tego, co znajduje się w środku danej osoby.</p><p>Człowiek jest istotą mściwą, jednak pragnienie zemsty w żaden sposób nie pomaga w osiągnięciu pożytecznych celów. W takim przypadku koncentracja uwagi przypada na osobę z zewnątrz, a nie na &bdquo;własne ja&rdquo;. Jest to więc bezużyteczne marnowanie siły na czynność, która nie przyniesie żadnych korzyści, chyba, że ktoś jest tak zawzięty, że za taką uzna szkodę innej osoby. W takiej sytuacji o wiele lepiej jest poczekać na dogodny moment i odpowiedni obrót spraw, tak jak lew wyczekujący swojej ofiary, zamiast działać szybko i pochopnie. Środki, które są podejmowane przez ludzkość w celu zniszczenia jakiejś jednostki, nie są niczym innym, niż samobójstwem własnego spokoju.</p><p>Osoby, które osiągnęły pełną harmonię, pozostają niewzruszone na działania ludzi, którzy wbrew pozorom są &bdquo;ponad nimi&rdquo;. Chodzi tu o takie osobowości jak politycy, ekonomiści, maklerzy, itd. Ich słowa, zachowania oraz próby manipulowania nie trafiają do ludzi, którzy w harmonii zajmują się swoimi sprawami, a nie problemami ogółu, których jedna osoba bez wątpienia nie da rady rozwiązać.</p><p>Człowiek spokojny izoluje się od świata, ale nie po to, żeby od niego uciec &ndash; takie podejście byłoby bardzo egoistyczne. Robi to, ponieważ zapewnia mu to chwilowe wycofanie się ze świata, nabranie sił do życia. Doskonale wie, że osiągnięcie pełnej indywidualności jest ukoronowaniem jego samokontroli, a jednocześnie majestatem spokoju.</p>`,
+        text: `<p>Spokój jest wartością, z której najrzadziej ze wszystkich innych można korzystać w trakcie ludzkiego życia. Wartość ta tworzy atmosferę dookoła danej osoby. Polega ona na koncentracji na własnym działaniu, byciu w jedności z celem, absolutnej pewności siebie oraz byciu samowystarczalnym.</p><p>Istotą, która żyje najpełniej, najintensywniej, najbardziej świadomie jest człowiek, przez którego przejawia spokój. Taka osoba jest przygotowana na wszelkie sytuacje i trudności. Można powiedzieć o niej, że zachowuje zawsze chłodny umysł, jest pogodna niezależnie od sytuacji, i co najważniejsze, stara się wypełniać wszystkie swoje zadania z każdym dniem coraz lepiej. Taka osoba jest sterem statku, który wypłynął na burzliwe wody, a nawet jeśli zboczy z kursu, może być pewien, że wróci na właściwy tor i będzie kierował się w tę stronę, w którą pierwotnie chciał zmierzać. Metafora steru oraz statku nie jest przypadkowa. Spokój jest jak ocean &ndash; tafla wody może być wzburzona, atakowana przez sztormy i huragany, ale pod powierzchnią np. stu metrów woda jest spokojna. Taki sam jest człowiek. Siła spokoju nie bierze się bowiem z zewnątrz, a z wewnątrz, czyli tego, co znajduje się w środku danej osoby.</p><p>Człowiek jest istotą mściwą, jednak pragnienie zemsty w żaden sposób nie pomaga w osiągnięciu pożytecznych celów. W takim przypadku koncentracja uwagi przypada na osobę z zewnątrz, a nie na &bdquo;własne ja&rdquo;. Jest to więc bezużyteczne marnowanie siły na czynność, która nie przyniesie żadnych korzyści, chyba, że ktoś jest tak zawzięty, że za taką uzna szkodę innej osoby. W takiej sytuacji o wiele lepiej jest poczekać na dogodny moment i odpowiedni obrót spraw, tak jak lew wyczekujący swojej ofiary, zamiast działać szybko i pochopnie. Środki, które są podejmowane przez ludzkość w celu zniszczenia jakiejś jednostki, nie są niczym innym, niż samobójstwem własnego spokoju.</p><p>Osoby, które osiągnęły pełną harmonię, pozostają niewzruszone na działania ludzi, którzy wbrew pozorom są &bdquo;ponad nimi&rdquo;. Chodzi tu o takie osobowości jak politycy, ekonomiści, maklerzy, itd. Ich słowa, zachowania oraz próby manipulowania nie trafiają do ludzi, którzy w harmonii zajmują się swoimi sprawami, a nie problemami ogółu, których jedna osoba bez wątpienia nie da rady rozwiązać.</p><p>Człowiek spokojny izoluje się od świata, ale nie po to, żeby od niego uciec &ndash; takie podejście byłoby bardzo egoistyczne. Robi to, ponieważ zapewnia mu to wyciszenie myśli, dzięki czemu może nabierać sił do życia i nie marnować swojej energii. Doskonale wie, że osiągnięcie pełnej indywidualności jest ukoronowaniem jego samokontroli, a jednocześnie majestatem spokoju.</p>`,
       },
       {
         title: "Pośpiech",

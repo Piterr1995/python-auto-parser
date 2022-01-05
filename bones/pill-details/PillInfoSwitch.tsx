@@ -11,6 +11,7 @@ const Content = styled.div`
   * {
     font-size: 1.3rem;
     line-height: 2.4rem;
+    text-align: justify;
   }
 
   @media screen and ${theme.breakpoints.bigTablet} {

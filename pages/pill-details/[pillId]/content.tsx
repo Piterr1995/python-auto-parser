@@ -1,5 +1,6 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useState, useEffect } from "react";
+import router from "next/router";
 
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
@@ -14,6 +15,7 @@ import ProgressBar from "bones/pill-details/content/ProgressBar";
 import TutorialModal from "bones/pill-details/content/TutorialModal";
 import { Translations } from "enums";
 import { theme } from "style/theme";
+import { pills } from "data";
 
 const LightMatBackground = "/images/dynamic-style.png";
 const DarkMatBackground = "/images/beanstalk-dark.png";
@@ -51,7 +53,6 @@ const Container = styled.div<{
   isBackgroundRugged: boolean;
 }>`
   background: ${({ isDarkTheme, isBackgroundRugged }) =>
-    // isDarkTheme ? "var(--bootstrapDark)" : `url(${Background})`};
     getBackground(isDarkTheme, isBackgroundRugged)};
   background-repeat: repeat;
   position: relative;
@@ -65,8 +66,6 @@ const Container = styled.div<{
     background: inherit;
     color: ${({ isDarkTheme, theme }) =>
       isDarkTheme ? "white" : "var(--black100)"};
-    /* background: ${({ isDarkTheme, theme }) =>
-      isDarkTheme ? "var(--bootstrapDark)" : "inherit"}; */
   }
 `;
 
@@ -97,6 +96,7 @@ const ContentContainer = styled.div<Pick<CommonProps, "fontSize">>`
   @media screen and ${theme.breakpoints.bigTablet} {
     width: 700px;
     margin: auto;
+    text-align: justify;
   }
 `;
 
@@ -133,9 +133,6 @@ const fontSizeOptions = [
   2.9,
 ];
 const preferredFontSizeLocalStorageKey = "zzpjwb";
-
-import { pills } from "data";
-import router from "next/router";
 
 const Content = ({ chapters, title }: { chapters: any; title: string }) => {
   const { t } = useTranslation(Translations.MAIN);
